@@ -1,0 +1,149 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2017 11:46:49 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-440"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:DTSID="{EEC0DF37-2402-41CF-97E1-04D243344890}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Database_Development_Environment"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{365BF1A2-7E8A-4918-82A0-D03EDF776B9D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NAASPB-PRD04\SQL2014]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{F7316632-5045-4280-A456-7C548A40FC88}"
+      DTS:ObjectName="NAASPB-PRD04\SQL2014">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=NAASPB-PRD04\SQL2014;UseWindowsAuthentication=True;UserName=;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Compliance_DEV"
+      DTS:CreationName="Microsoft.TransferDatabaseTask"
+      DTS:Description="Transfer Database Task"
+      DTS:DTSID="{8445827B-1C83-4732-B716-AE567ABB31FF}"
+      DTS:ExecutableType="Microsoft.TransferDatabaseTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Compliance_DEV"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferDatabasesTaskData
+          SrcConn="{F7316632-5045-4280-A456-7C548A40FC88}"
+          DestConn="{F7316632-5045-4280-A456-7C548A40FC88}"
+          Method="1"
+          SrcDBName="Compliance"
+          ReattachSrcDB="True"
+          SrcDBFiles="&quot;Compliance.mdf&quot;,&quot;C:\Databases&quot;,&quot;&quot;;&quot;Compliance_log.ldf&quot;,&quot;C:\Databases&quot;,&quot;&quot;"
+          DestDBName="Compliance_DEV"
+          DestDBFiles="&quot;Compliance_DEV.mdf&quot;,&quot;C:\Databases&quot;,&quot;&quot;;&quot;Compliance__DEV_log.ldf&quot;,&quot;C:\Databases&quot;,&quot;&quot;"
+          DestOverwrite="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Premise_DEV"
+      DTS:CreationName="Microsoft.TransferDatabaseTask"
+      DTS:Description="Transfer Database Task"
+      DTS:DTSID="{51728d22-dd66-4f15-82c3-07ff04cae100}"
+      DTS:ExecutableType="Microsoft.TransferDatabaseTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Premise_DEV"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferDatabasesTaskData
+          SrcConn="{F7316632-5045-4280-A456-7C548A40FC88}"
+          DestConn="{F7316632-5045-4280-A456-7C548A40FC88}"
+          Method="1"
+          SrcDBName="Premise"
+          ReattachSrcDB="True"
+          SrcDBFiles="&quot;Premise.mdf&quot;,&quot;C:\Databases&quot;,&quot;&quot;;&quot;Premise_log.ldf&quot;,&quot;C:\Databases&quot;,&quot;&quot;"
+          DestDBName="Premise_DEV"
+          DestDBFiles="&quot;Premise_DEV.mdf&quot;,&quot;C:\Databases&quot;,&quot;&quot;;&quot;Premise__DEV_log.ldf&quot;,&quot;C:\Databases&quot;,&quot;&quot;"
+          DestOverwrite="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SQL Server Objects Task"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{15075A27-FC8B-433D-A909-3FBB0C18B588}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SQL Server Objects Task"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{F7316632-5045-4280-A456-7C548A40FC88}"
+          DestinationConnection="{F7316632-5045-4280-A456-7C548A40FC88}"
+          SourceDatabase="Premise"
+          DestinationDatabase="Premise_DEV"
+          CopyAllTables="True"
+          CopyAllStoredProcedures="True"
+          CopyAllUserDefinedFunctions="True"
+          CopyAllDefaults="True"
+          CopyAllUserDefinedDataTypes="True"
+          CopyAllPartitionFunctions="True"
+          CopyAllPartitionSchemes="True"
+          CopyAllSchemas="True"
+          CopyAllSqlAssemblies="True"
+          CopyAllUserDefinedAggregates="True"
+          CopyAllUserDefinedTypes="True"
+          CopyAllXmlSchemaCollections="True"
+          DropObjectsFirst="True"
+          IncludeDependentObjects="True"
+          IncludeExtendedProperties="True"
+          CopyData="True"
+          UseCollation="True"
+          CopyDatabaseUsers="True"
+          CopyDatabaseRoles="True"
+          CopyIndexes="True"
+          CopyTriggers="True"
+          CopyFullTextIndexes="True"
+          GenerateScriptsInUnicode="True"
+          CopyAllDRIObjects="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Compliance_DEV"
+          TopLeft="219,117" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Premise_DEV"
+          TopLeft="219,192" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Transfer SQL Server Objects Task"
+          TopLeft="507,210" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

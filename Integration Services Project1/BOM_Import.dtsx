@@ -1,0 +1,1876 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/23/2016 10:40:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-440"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:DTSID="{D80BA8F8-36CB-4CF5-AF28-B30177E1BCC2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="BOM_Import"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{B6143ACF-3D1C-430B-8636-9D8467714955}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AFLPRD_BOMInvComp]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="AFLPRD_BOMInvComp"
+      DTS:DTSID="{5C1755D2-7A67-4948-8DE0-D43E15D5D08A}"
+      DTS:ObjectName="AFLPRD_BOMInvComp">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\R12_AFLPRD\AFLPRD_BOMInvComp_CAB.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationCode"
+              DTS:DTSID="{0AEC83FC-7C17-4978-B927-49045F66F14C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemNumber"
+              DTS:DTSID="{7202CAD2-422B-4E04-9BF6-A19A2EC1A154}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyDescription"
+              DTS:DTSID="{36F369EE-AB7D-44D4-88EF-0976F2EEBB2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemStatus"
+              DTS:DTSID="{4CBA38C3-C898-4A5F-B9CF-EFB612160205}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="8"
+              DTS:DataScale="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemSeqNumber"
+              DTS:DTSID="{334620F5-6C1A-4267-B638-F66C69B5974E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OperationSeqNumber"
+              DTS:DTSID="{0E839EDE-3330-46BE-A9C0-7D5BC26002BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentItemNumber"
+              DTS:DTSID="{3BE61AD2-ABE1-498A-A31A-55DFA76DB437}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentDescription"
+              DTS:DTSID="{767466C8-5F98-4038-90E4-6BEE0A53BDCB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrimaryUOM"
+              DTS:DTSID="{3948A61D-F2CD-4FCB-9FD6-0CBFD8B269B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDate"
+              DTS:DTSID="{34A125C1-3CF0-4D3B-AE8F-221D3D77B397}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="10"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentQuantity"
+              DTS:DTSID="{19BA26E1-4C0C-4976-A6E3-810B9EE67F95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompItemStatus"
+              DTS:DTSID="{6A42C94A-57EE-4E0C-9F40-5DF812BA31DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AlternateBOMDesignator"
+              DTS:DTSID="{81361855-19F7-4E63-B718-F2DA00A8F032}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PendingFromECN"
+              DTS:DTSID="{5BCEE318-27EA-4857-B3C6-541EE4CCDABE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommonOrganizationId"
+              DTS:DTSID="{FC256421-6998-4A1D-A652-3D9F93382FF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SupplySubinventory"
+              DTS:DTSID="{FE8BB23F-0FD6-427A-AE1E-29C935ED15B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountPerUOM"
+              DTS:DTSID="{F0147301-52D2-45E8-B279-304C4489F32C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitId"
+              DTS:DTSID="{9229A5F0-F8BC-45CB-8F91-DD9BB82333BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LayerId"
+              DTS:DTSID="{4AE3F62D-4CE7-453A-80D9-AA4E4F827498}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CopyCount"
+              DTS:DTSID="{0FFDEFC3-791E-4C64-94A1-A5D0617772C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemCopied"
+              DTS:DTSID="{7F518B0F-291E-445A-AB85-FA003B8191B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrgOpSeq"
+              DTS:DTSID="{EC32D029-6CE6-4C8F-9CEC-F35B00E22D0F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Basis"
+              DTS:DTSID="{C5736E1F-FE9F-46DD-8026-8ECC2DEA9FC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="8"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitCost"
+              DTS:DTSID="{9141B900-F888-48E0-B391-EEBA0B419891}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDateTo"
+              DTS:DTSID="{2D1AFB82-15E0-40D7-8A81-EA347D9F9393}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BOM]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="AFLPRD BOM Extract"
+      DTS:DTSID="{9004FDCA-F9A6-4EE3-B587-8CDE79A19452}"
+      DTS:ObjectName="BOM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\naaftp-srv01\openshare\extracts\R12_AFLPRD\AFLPRD_BOMInvComp_CAB.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationCode"
+              DTS:DTSID="{84F03A20-FF60-4599-83BA-29DA328E259A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemNumber"
+              DTS:DTSID="{28297300-095E-4D41-B6C2-41060F7709FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyDescription"
+              DTS:DTSID="{DBBDFA1A-31AD-485F-ACBA-037A3B9D0EAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemStatus"
+              DTS:DTSID="{9143BDC1-35CC-44C9-8F8C-0D4E884D7FC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemSeqNumber"
+              DTS:DTSID="{F039EDC8-5237-4969-98C5-EFDD4391B428}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OperationSeqNumber"
+              DTS:DTSID="{B7D92F1C-07F6-46F7-9450-57AB125D1C87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentItemNumber"
+              DTS:DTSID="{1E718385-D263-41D2-9E1D-0B1B7CEBD698}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentDescription"
+              DTS:DTSID="{6929D43F-0B34-4B71-96CF-2097C35E37FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrimaryUOM"
+              DTS:DTSID="{A7E044F3-7756-4AF6-883F-C1DDFF1761DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDate"
+              DTS:DTSID="{CCFE3A9A-013F-4259-94D2-A3A302ABF3C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="10"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentQuantity"
+              DTS:DTSID="{939D9C41-9CBD-405C-BB26-7FE3D46D278A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompItemStatus"
+              DTS:DTSID="{5388C487-A5BC-43B0-A4BB-1A16A88F45BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AlternateBOMDesignator"
+              DTS:DTSID="{EBF634F3-9595-4C02-B187-8119495B9FFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PendingFromECN"
+              DTS:DTSID="{B89BBA7F-3C8E-46BF-9366-9F7E26C1AF4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommonOrganizationId"
+              DTS:DTSID="{5342323C-1D74-44FE-B7C7-0F262416A7D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SupplySubinventory"
+              DTS:DTSID="{A66BA260-5E37-4B1D-81E2-38588AB95EE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountPerUOM"
+              DTS:DTSID="{03083146-6AF2-4BDE-8A53-37B1C81869AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitId"
+              DTS:DTSID="{F1398A4E-D4F8-4471-A4CE-C6F5D93F44D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LayerId"
+              DTS:DTSID="{1DE3E141-7AC6-44F4-9534-EC4A42C71708}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CopyCount"
+              DTS:DTSID="{F306369C-0173-4077-8612-4383F3C5C089}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemCopied"
+              DTS:DTSID="{59635221-9143-4BC0-BC9C-36AEDF1F47EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrgOpSeq"
+              DTS:DTSID="{76E52C43-7D11-4EE7-8CC0-040C564113C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Basis"
+              DTS:DTSID="{E94D88B5-D094-419F-9643-889FB1357CAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitCost"
+              DTS:DTSID="{8F650E8B-A0A7-43BB-AEAD-2E4D0B3CB3ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDateTo"
+              DTS:DTSID="{16BF5DEF-84C1-435D-A771-19F3D53F71C2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04B0567B-84B5-47F9-B1CC-0513EB72DA87}"
+      DTS:ObjectName="NAASPB-PRD04.OracleExtracts2014">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04\SQL2014;Initial Catalog=Premise;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\BOM Extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8b3b420a-f948-472d-9a7b-d75239a23a77}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BOM Extract">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\BOM Extract.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{cf47409a-5e17-47c3-a294-42cc45335793}"
+          DTS:EventID="683999340"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{e68438ff-aa77-49f6-ab1d-1d893a349be2}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\BOM Extract\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BOM Extract\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BOM]"
+                  connectionManagerRefId="Package.ConnectionManagers[BOM]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationCode]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrganizationCode]"
+                      name="OrganizationCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemNumber]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]"
+                      name="AssemblyItemNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyDescription]"
+                      length="500"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyDescription]"
+                      name="AssemblyDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemStatus]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]"
+                      name="AssemblyItemStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemSeqNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemSeqNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemSeqNumber]"
+                      name="ItemSeqNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OperationSeqNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OperationSeqNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OperationSeqNumber]"
+                      name="OperationSeqNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentItemNumber]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentItemNumber]"
+                      name="ComponentItemNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentDescription]"
+                      length="500"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentDescription]"
+                      name="ComponentDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PrimaryUOM]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PrimaryUOM]"
+                      name="PrimaryUOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EffectivityDate]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDate]"
+                      name="EffectivityDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentQuantity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentQuantity]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentQuantity]"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompItemStatus]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CompItemStatus]"
+                      name="CompItemStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AlternateBOMDesignator]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]"
+                      name="AlternateBOMDesignator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PendingFromECN]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PendingFromECN]"
+                      name="PendingFromECN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommonOrganizationId]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CommonOrganizationId]"
+                      name="CommonOrganizationId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SupplySubinventory]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SupplySubinventory]"
+                      name="SupplySubinventory"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountPerUOM]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CountPerUOM]"
+                      name="CountPerUOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitId]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitId]"
+                      name="UnitId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[LayerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LayerId]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[LayerId]"
+                      name="LayerId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CopyCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CopyCount]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CopyCount]"
+                      name="CopyCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemCopied]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemCopied]"
+                      name="ItemCopied"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrgOpSeq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrgOpSeq]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrgOpSeq]"
+                      name="OrgOpSeq"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Basis]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Basis]"
+                      name="Basis"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitCost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitCost]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitCost]"
+                      name="UnitCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EffectivityDateTo]"
+                      length="50"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDateTo]"
+                      name="EffectivityDateTo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="AssemblyDescription" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemSeqNumber]"
+                      dataType="i4"
+                      name="ItemSeqNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OperationSeqNumber]"
+                      dataType="i4"
+                      name="OperationSeqNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ComponentItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ComponentDescription" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PrimaryUOM" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ComponentQuantity]"
+                      dataType="numeric"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AlternateBOMDesignator" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PendingFromECN" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommonOrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SupplySubinventory" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountPerUOM" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitId]"
+                      dataType="i4"
+                      name="UnitId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LayerId]"
+                      dataType="i4"
+                      name="LayerId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CopyCount]"
+                      dataType="i4"
+                      name="CopyCount" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemCopied" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrgOpSeq]"
+                      dataType="i4"
+                      name="OrgOpSeq" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Basis" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UnitCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UnitCost" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDateTo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\BOM Extract\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AFLPRD_BOMInvComp_CAB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BOM Extract\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+                  connectionManagerRefId="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrganizationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrganizationCode"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrganizationCode]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssemblyItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AssemblyItemNumber"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssemblyDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="AssemblyDescription"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyDescription]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyDescription]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AssemblyItemStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AssemblyItemStatus"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemStatus]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ItemSeqNumber]"
+                      cachedDataType="i4"
+                      cachedName="ItemSeqNumber"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemSeqNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemSeqNumber]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OperationSeqNumber]"
+                      cachedDataType="i4"
+                      cachedName="OperationSeqNumber"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OperationSeqNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OperationSeqNumber]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ComponentItemNumber"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentItemNumber]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentItemNumber]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ComponentDescription"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentDescription]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentDescription]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrimaryUOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PrimaryUOM"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryUOM]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PrimaryUOM]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EffectivityDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EffectivityDate"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDate]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDate]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComponentQuantity]"
+                      cachedDataType="numeric"
+                      cachedName="ComponentQuantity"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentQuantity]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ComponentQuantity]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CompItemStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompItemStatus"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompItemStatus]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CompItemStatus]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AlternateBOMDesignator]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AlternateBOMDesignator"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AlternateBOMDesignator]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PendingFromECN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PendingFromECN"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PendingFromECN]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PendingFromECN]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CommonOrganizationId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CommonOrganizationId"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommonOrganizationId]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CommonOrganizationId]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplySubinventory]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SupplySubinventory"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplySubinventory]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SupplySubinventory]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountPerUOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountPerUOM"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountPerUOM]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CountPerUOM]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitId]"
+                      cachedDataType="i4"
+                      cachedName="UnitId"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitId]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitId]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LayerId]"
+                      cachedDataType="i4"
+                      cachedName="LayerId"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LayerId]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[LayerId]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CopyCount]"
+                      cachedDataType="i4"
+                      cachedName="CopyCount"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CopyCount]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CopyCount]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ItemCopied]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ItemCopied"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemCopied]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ItemCopied]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrgOpSeq]"
+                      cachedDataType="i4"
+                      cachedName="OrgOpSeq"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrgOpSeq]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[OrgOpSeq]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Basis]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Basis"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Basis]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[Basis]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitCost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UnitCost"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UnitCost]" />
+                    <inputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EffectivityDateTo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EffectivityDateTo"
+                      externalMetadataColumnId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDateTo]"
+                      lineageId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EffectivityDateTo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="AssemblyDescription" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemSeqNumber]"
+                      dataType="numeric"
+                      name="ItemSeqNumber"
+                      precision="8"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OperationSeqNumber]"
+                      dataType="i4"
+                      name="OperationSeqNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ComponentItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ComponentDescription" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PrimaryUOM" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComponentQuantity]"
+                      dataType="numeric"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AlternateBOMDesignator" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PendingFromECN" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommonOrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SupplySubinventory" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountPerUOM" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitId]"
+                      dataType="i4"
+                      name="UnitId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LayerId]"
+                      dataType="i4"
+                      name="LayerId" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CopyCount]"
+                      dataType="i4"
+                      name="CopyCount" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemCopied" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrgOpSeq]"
+                      dataType="i4"
+                      name="OrgOpSeq" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Basis" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      dataType="numeric"
+                      name="UnitCost"
+                      precision="18"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDateTo" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Number]"
+                      dataType="i4"
+                      name="Number" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateInserted]"
+                      dataType="dbTimeStamp"
+                      name="DateInserted" />
+                    <externalMetadataColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="wstr"
+                      length="100"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\BOM Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BOM Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BOM Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BOM Extract\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\BOM Extract.Paths[Flat File Source Output]"
+              endId="Package\BOM Extract\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\BOM Extract\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DeleteBOM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Delete Rows from Table"
+      DTS:DTSID="{C1763F78-E77F-4B08-A789-59222BECBAB1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DeleteBOM"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{04B0567B-84B5-47F9-B1CC-0513EB72DA87}"
+          SQLTask:SqlStatementSource="DELETE FROM AFLPRD_BOMInvComp_CAB" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3C43ABB5-8C46-4746-A968-3081626B3B52}"
+      DTS:From="Package\DeleteBOM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\BOM Extract"
+      DTS:Value="2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\BOM Extract"
+          TopLeft="112,169" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\DeleteBOM"
+          TopLeft="111,38" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="179.5,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,34.9453125,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\BOM Extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\BOM Extract\OLE DB Destination"
+          TopLeft="172,177" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\BOM Extract\Flat File Source"
+          TopLeft="183,31" />
+        <EdgeLayout
+          Id="Package\BOM Extract.Paths[Flat File Source Output]"
+          TopLeft="259,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,104"
+              Start="0,0"
+              End="0,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\BOM Extract\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

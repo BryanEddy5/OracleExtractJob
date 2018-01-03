@@ -1,0 +1,1136 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/25/2017 9:52:28 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-440"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:Description="Print safe data for print strings"
+  DTS:DTSID="{492605D6-0FA6-4E68-B03E-B46CE8F2E306}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="PrintSafe"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8CA4A100-4ABE-4738-99F8-170211DAF526}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{41E8869B-1852-4857-8456-E789A6E0A0DB}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04\SQL2014;Initial Catalog=Premise;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2CD1C9D-B2DD-4433-9DD2-74D02A9ADD26}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=\\naa.fujikurausa.com\dfs\SPB\Apps\prod\PREMISE\PrintSafeManager\PrintSafeManager.mdb;OLE DB SERVICES=0;Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{EFCBBD87-F835-4370-96FA-E867519D8D9E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - PRINT_STRING"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - PRINT_STRING"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[PrintSafe].[PRINT_STRING]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[PRODUCTION_ORDER_NUMBER]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="PRODUCTION_ORDER_NUMBER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[MATERIAL_NUMBER]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="MATERIAL_NUMBER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[MATERIAL_NUMBER]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[MATERIAL_NUMBER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[PRINT_STRING_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PRINT_STRING_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[PRINT_STRING_DESCRIPTION]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PRINT_STRING_DESCRIPTION"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING_DESCRIPTION]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[PRINT_STRING]"
+                      cachedDataType="nText"
+                      cachedName="PRINT_STRING"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[INSERT_DATE]"
+                      cachedDataType="date"
+                      cachedName="INSERT_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[INSERT_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[INSERT_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[UPDATE_DATE]"
+                      cachedDataType="date"
+                      cachedName="UPDATE_DATE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[UPDATE_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].Columns[ITEM_NUMBER]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ITEM_NUMBER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[ITEM_NUMBER]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[ITEM_NUMBER]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="30"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[MATERIAL_NUMBER]"
+                      dataType="wstr"
+                      length="25"
+                      name="MATERIAL_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRINT_STRING_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING_DESCRIPTION]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRINT_STRING_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[PRINT_STRING]"
+                      dataType="nText"
+                      name="PRINT_STRING" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[INSERT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="INSERT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[UPDATE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="UPDATE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[ITEM_NUMBER]"
+                      dataType="wstr"
+                      length="255"
+                      name="ITEM_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input].ExternalColumns[UniqueID]"
+                      dataType="guid"
+                      name="UniqueID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PRINT_STRING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PRINT_STRING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PRINT_STRING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination 1 - PS_HISTORY"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[PrintSafe].[PS_HISTORY]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[DOWNLOAD_TYPE]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DOWNLOAD_TYPE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[DOWNLOAD_TYPE]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[DOWNLOAD_TYPE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[PRODUCTION_ORDER_NUMBER]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PRODUCTION_ORDER_NUMBER"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[COMPUTER_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="COMPUTER_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[COMPUTER_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[COMPUTER_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[PRINTER_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PRINTER_NAME"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRINTER_NAME]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINTER_NAME]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[FONT_SPEC]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FONT_SPEC"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[FONT_SPEC]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[FONT_SPEC]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[CALIBRATION_VALUE]"
+                      cachedDataType="i4"
+                      cachedName="CALIBRATION_VALUE"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[CALIBRATION_VALUE]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[CALIBRATION_VALUE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[PRINT_STRING]"
+                      cachedDataType="nText"
+                      cachedName="PRINT_STRING"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRINT_STRING]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINT_STRING]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[WHEN_RUN]"
+                      cachedDataType="date"
+                      cachedName="WHEN_RUN"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[WHEN_RUN]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[WHEN_RUN]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].Columns[ARCHIVED]"
+                      cachedDataType="ui1"
+                      cachedName="ARCHIVED"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[ARCHIVED]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[ARCHIVED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[DOWNLOAD_TYPE]"
+                      dataType="wstr"
+                      length="1"
+                      name="DOWNLOAD_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[COMPUTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="COMPUTER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRINTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRINTER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[FONT_SPEC]"
+                      dataType="wstr"
+                      length="50"
+                      name="FONT_SPEC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[CALIBRATION_VALUE]"
+                      dataType="i4"
+                      name="CALIBRATION_VALUE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[PRINT_STRING]"
+                      dataType="nText"
+                      name="PRINT_STRING" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[WHEN_RUN]"
+                      dataType="dbTimeStamp"
+                      name="WHEN_RUN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[ARCHIVED]"
+                      dataType="ui1"
+                      name="ARCHIVED" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input].ExternalColumns[UniqueID]"
+                      dataType="guid"
+                      name="UniqueID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - PRINT_STRING"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - PRINT_STRING"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">PRINT_STRING</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - PRINT_STRING.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      length="30"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      name="PRODUCTION_ORDER_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[MATERIAL_NUMBER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[MATERIAL_NUMBER]"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[MATERIAL_NUMBER]"
+                      name="MATERIAL_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_NAME]"
+                      name="PRINT_STRING_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_DESCRIPTION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING_DESCRIPTION]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING_DESCRIPTION]"
+                      name="PRINT_STRING_DESCRIPTION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[PRINT_STRING]"
+                      name="PRINT_STRING"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[INSERT_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[INSERT_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[INSERT_DATE]"
+                      name="INSERT_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_DATE]"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[UPDATE_DATE]"
+                      name="UPDATE_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[ITEM_NUMBER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[ITEM_NUMBER]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].Columns[ITEM_NUMBER]"
+                      name="ITEM_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="30"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[MATERIAL_NUMBER]"
+                      dataType="wstr"
+                      length="25"
+                      name="MATERIAL_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRINT_STRING_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING_DESCRIPTION]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRINT_STRING_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING]"
+                      dataType="nText"
+                      name="PRINT_STRING" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[INSERT_DATE]"
+                      dataType="date"
+                      name="INSERT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_DATE]"
+                      dataType="date"
+                      name="UPDATE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output].ExternalColumns[ITEM_NUMBER]"
+                      dataType="wstr"
+                      length="255"
+                      name="ITEM_NUMBER" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[MATERIAL_NUMBER]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[MATERIAL_NUMBER]"
+                      name="MATERIAL_NUMBER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING_NAME]"
+                      name="PRINT_STRING_NAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING_DESCRIPTION]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING_DESCRIPTION]"
+                      name="PRINT_STRING_DESCRIPTION" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING]"
+                      name="PRINT_STRING" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[INSERT_DATE]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[INSERT_DATE]"
+                      name="INSERT_DATE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[UPDATE_DATE]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[UPDATE_DATE]"
+                      name="UPDATE_DATE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ITEM_NUMBER]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ITEM_NUMBER]"
+                      name="ITEM_NUMBER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source 1 - PS_HISTORY"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">PS_HISTORY</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[DOWNLOAD_TYPE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[DOWNLOAD_TYPE]"
+                      length="1"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[DOWNLOAD_TYPE]"
+                      name="DOWNLOAD_TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      name="PRODUCTION_ORDER_NUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[COMPUTER_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[COMPUTER_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[COMPUTER_NAME]"
+                      name="COMPUTER_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINTER_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRINTER_NAME]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINTER_NAME]"
+                      name="PRINTER_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[FONT_SPEC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[FONT_SPEC]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[FONT_SPEC]"
+                      name="FONT_SPEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[CALIBRATION_VALUE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[CALIBRATION_VALUE]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[CALIBRATION_VALUE]"
+                      name="CALIBRATION_VALUE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINT_STRING]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[PRINT_STRING]"
+                      name="PRINT_STRING"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[WHEN_RUN]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[WHEN_RUN]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[WHEN_RUN]"
+                      name="WHEN_RUN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[ARCHIVED]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[ARCHIVED]"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].Columns[ARCHIVED]"
+                      name="ARCHIVED"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[DOWNLOAD_TYPE]"
+                      dataType="wstr"
+                      length="1"
+                      name="DOWNLOAD_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[COMPUTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="COMPUTER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRINTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="PRINTER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[FONT_SPEC]"
+                      dataType="wstr"
+                      length="50"
+                      name="FONT_SPEC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[CALIBRATION_VALUE]"
+                      dataType="i4"
+                      name="CALIBRATION_VALUE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[PRINT_STRING]"
+                      dataType="nText"
+                      name="PRINT_STRING" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[WHEN_RUN]"
+                      dataType="date"
+                      name="WHEN_RUN" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output].ExternalColumns[ARCHIVED]"
+                      dataType="ui1"
+                      name="ARCHIVED" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[DOWNLOAD_TYPE]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[DOWNLOAD_TYPE]"
+                      name="DOWNLOAD_TYPE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRODUCTION_ORDER_NUMBER]"
+                      name="PRODUCTION_ORDER_NUMBER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[COMPUTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[COMPUTER_NAME]"
+                      name="COMPUTER_NAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRINTER_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRINTER_NAME]"
+                      name="PRINTER_NAME" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[FONT_SPEC]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[FONT_SPEC]"
+                      name="FONT_SPEC" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[CALIBRATION_VALUE]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[CALIBRATION_VALUE]"
+                      name="CALIBRATION_VALUE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[PRINT_STRING]"
+                      name="PRINT_STRING" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[WHEN_RUN]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[WHEN_RUN]"
+                      name="WHEN_RUN" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ARCHIVED]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ARCHIVED]"
+                      name="ARCHIVED" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Destination 1 - PS_HISTORY.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source 1 - PS_HISTORY.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task 1\Destination - PRINT_STRING.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - PRINT_STRING.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="28.5,118.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Data Flow Task 1\Source 1 - PS_HISTORY"
+          TopLeft="16,5.5" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task 1\Source - PRINT_STRING"
+          TopLeft="292,5.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Data Flow Task 1\Destination - PRINT_STRING"
+          TopLeft="281.5,107.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Data Flow Task 1\Destination 1 - PS_HISTORY"
+          TopLeft="5.5,107.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="113,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output1]"
+          TopLeft="390,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Source 1 - PS_HISTORY">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Source - PRINT_STRING">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - PRINT_STRING">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination 1 - PS_HISTORY">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

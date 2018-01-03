@@ -1,0 +1,1871 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/23/2016 10:40:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-440"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:DTSID="{0A9DD292-D290-49DB-BD47-CB703F989AEB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="BOM_Import_MTY"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{95D06DAB-9553-4BBB-8A25-869BF5C34224}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AFLPRD_BOMInvComp_MTY]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="AFLPRD_BOMInvComp_MTY"
+      DTS:DTSID="{8F6660B8-FE32-4886-986C-1859A2065403}"
+      DTS:ObjectName="AFLPRD_BOMInvComp_MTY">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\naaftp-srv01\openshare\extracts\R12_AFLPRD\AFLPRD_BOMInvComp_MTY.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationCode"
+              DTS:DTSID="{443B3846-DA74-4CB5-AAE6-18D941B85AB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemNumber"
+              DTS:DTSID="{ACAEA843-2726-420C-B50E-F8DBED422182}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyDescription"
+              DTS:DTSID="{3CD1B020-E9D4-408E-AF00-E95966712034}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemStatus"
+              DTS:DTSID="{03421FFC-C75B-4CF3-A7C0-AEA05DA7E3DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="8"
+              DTS:DataScale="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemSeqNumber"
+              DTS:DTSID="{BB2787FF-3AD3-4B9A-BD75-5F36E24FA25F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OperationSeqNumber"
+              DTS:DTSID="{25986433-D7BB-47ED-AFBA-F34FC2174E93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentItemNumber"
+              DTS:DTSID="{2F25C941-8D6E-42F3-9F15-C60E1083186B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentDescription"
+              DTS:DTSID="{201026A6-2C85-49F3-8CCA-95CA93E05C18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrimaryUOM"
+              DTS:DTSID="{84182E7E-9099-4162-9912-A66E17D3B7CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDate"
+              DTS:DTSID="{21FB5904-9506-44CB-ADC6-00B3007F17BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="10"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentQuantity"
+              DTS:DTSID="{CB236304-A1FD-4748-87E4-B07A6FF2A030}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompItemStatus"
+              DTS:DTSID="{4A28303E-7262-4E29-B870-73466CADB466}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AlternateBOMDesignator"
+              DTS:DTSID="{C86D305F-DD86-4106-849C-3A6D8F80D167}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PendingFromECN"
+              DTS:DTSID="{13592BE6-47A9-4BA4-A9F2-0CEF42A6279C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommonOrganizationId"
+              DTS:DTSID="{7D0A13F2-3352-4F2C-A0C2-8A11C5D066FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SupplySubinventory"
+              DTS:DTSID="{CFEA0361-1F38-42E7-B128-6D44615AAC19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountPerUOM"
+              DTS:DTSID="{F7D49BB8-E575-4D5C-99FE-437101B270B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitId"
+              DTS:DTSID="{0403FD52-4675-471F-84E9-F3B4B947E76A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LayerId"
+              DTS:DTSID="{893B6A99-2028-436D-8163-30C0CBDF4CEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CopyCount"
+              DTS:DTSID="{FBBDD66F-38FA-4F64-8D6E-8442DE3D6ECF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemCopied"
+              DTS:DTSID="{D3B34108-F11A-44BF-B7F4-CF7B30C84AA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrgOpSeq"
+              DTS:DTSID="{7893350F-30EA-4946-AF1D-7CEF53B7AA29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Basis"
+              DTS:DTSID="{045BF732-98C3-4E84-B832-3C696D19FBDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="8"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitCost"
+              DTS:DTSID="{52AAD3D4-0397-4B86-BEE0-00559FFCBF8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDateTo"
+              DTS:DTSID="{68AA418A-724B-461A-82E9-011E222C33C7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BOM]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="AFLPRD BOM Extract"
+      DTS:DTSID="{05D862AA-3F3D-4EA2-8722-EA610CD83AB0}"
+      DTS:ObjectName="BOM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\naaftp-srv01\openshare\extracts\R12_AFLPRD\AFLPRD_BOMInvComp_CAB.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationCode"
+              DTS:DTSID="{999AADE7-6EFE-4EF4-B15A-7951808A9CCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemNumber"
+              DTS:DTSID="{AC1D6441-F131-420F-9FAF-5B7BD851DF87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyDescription"
+              DTS:DTSID="{34CCBF61-D874-4253-A2D1-51D00E7888AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AssemblyItemStatus"
+              DTS:DTSID="{516743B8-6253-4E0B-807B-FBD1C36CB0A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemSeqNumber"
+              DTS:DTSID="{60D2AA1D-504A-4949-9F43-73329DC1EA68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OperationSeqNumber"
+              DTS:DTSID="{6AF479C9-3729-4BD1-A17B-4460527F4602}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentItemNumber"
+              DTS:DTSID="{610DAF93-2C32-4287-861A-DC6374406CD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentDescription"
+              DTS:DTSID="{0D7424B8-6604-44A9-837E-3C19E9F3E9E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrimaryUOM"
+              DTS:DTSID="{FCE21DB8-6230-4370-B224-84547C9C01FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDate"
+              DTS:DTSID="{DBEEF34C-6AA1-475F-AEC5-05BECC169012}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="10"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ComponentQuantity"
+              DTS:DTSID="{B689D129-9012-45BC-A8BE-0A16E711960B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompItemStatus"
+              DTS:DTSID="{AC5A1957-93ED-4614-BCCC-FAE72310BC91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AlternateBOMDesignator"
+              DTS:DTSID="{B3C8E903-162B-4105-8F70-56D46D81EABB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PendingFromECN"
+              DTS:DTSID="{72926DDC-FED4-4C81-B188-C7A3A3F56D68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommonOrganizationId"
+              DTS:DTSID="{8DEB1B20-8EF9-44D9-9295-05A93982B521}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SupplySubinventory"
+              DTS:DTSID="{6F21B5EE-0710-4B9D-B1BC-91B96357320C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountPerUOM"
+              DTS:DTSID="{4C3770F3-46F6-4090-A761-DD85AE0AF582}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitId"
+              DTS:DTSID="{4DA8A508-2AAA-486D-AD11-57052FAC39CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LayerId"
+              DTS:DTSID="{0A861E53-D9BA-4DBA-B1A5-F44F0C9DB706}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CopyCount"
+              DTS:DTSID="{241E4454-F192-4752-BB20-24D03EB1C126}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ItemCopied"
+              DTS:DTSID="{6924C0EF-E530-4FE2-9FA9-8D39083FF07B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrgOpSeq"
+              DTS:DTSID="{7DB10596-A073-481D-87A2-73EE4E4666CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Basis"
+              DTS:DTSID="{B84FBFCA-351C-4933-9872-7140D5B12E09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitCost"
+              DTS:DTSID="{D5863C8A-58AE-46E0-BF41-DE86DF3E850F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectivityDateTo"
+              DTS:DTSID="{D87ABE10-4686-42E3-A0FA-AD1DB0F7AAB6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C58F907B-1A93-47C6-BE29-EB7645C913C5}"
+      DTS:ObjectName="NAASPB-PRD04.OracleExtracts2014">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04\SQL2014;Initial Catalog=OracleExtracts;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NAASPB-PRD04\SQL2014.Premise]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9458A579-6528-4B2C-B77A-690D03097D26}"
+      DTS:ObjectName="NAASPB-PRD04\SQL2014.Premise">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04\SQL2014;Initial Catalog=Premise;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AFLPRD_BOMInvComp_MTY"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{32C5C0CA-26C4-4276-9325-E2056FC241CB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AFLPRD_BOMInvComp_MTY"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="AFLPRD_BOMInvComp_MTY"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AFLPRD_BOMInvComp_MTY]"
+                  connectionManagerRefId="Package.ConnectionManagers[AFLPRD_BOMInvComp_MTY]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OrganizationCode]"
+                      length="3"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrganizationCode]"
+                      name="OrganizationCode"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemNumber]"
+                      length="30"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]"
+                      name="AssemblyItemNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyDescription]"
+                      length="500"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyDescription]"
+                      name="AssemblyDescription"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemStatus]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]"
+                      name="AssemblyItemStatus"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemSeqNumber]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ItemSeqNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemSeqNumber]"
+                      name="ItemSeqNumber"
+                      precision="8"
+                      scale="3"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OperationSeqNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OperationSeqNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OperationSeqNumber]"
+                      name="OperationSeqNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentItemNumber]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentItemNumber]"
+                      name="ComponentItemNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentDescription]"
+                      length="500"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentDescription]"
+                      name="ComponentDescription"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[PrimaryUOM]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PrimaryUOM]"
+                      name="PrimaryUOM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[EffectivityDate]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDate]"
+                      name="EffectivityDate"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentQuantity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentQuantity]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentQuantity]"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CompItemStatus]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CompItemStatus]"
+                      name="CompItemStatus"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AlternateBOMDesignator]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]"
+                      name="AlternateBOMDesignator"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[PendingFromECN]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PendingFromECN]"
+                      name="PendingFromECN"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CommonOrganizationId]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CommonOrganizationId]"
+                      name="CommonOrganizationId"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[SupplySubinventory]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[SupplySubinventory]"
+                      name="SupplySubinventory"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CountPerUOM]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CountPerUOM]"
+                      name="CountPerUOM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[UnitId]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitId]"
+                      name="UnitId"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[LayerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[LayerId]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[LayerId]"
+                      name="LayerId"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CopyCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CopyCount]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CopyCount]"
+                      name="CopyCount"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ItemCopied]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemCopied]"
+                      name="ItemCopied"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrgOpSeq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OrgOpSeq]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrgOpSeq]"
+                      name="OrgOpSeq"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[Basis]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[Basis]"
+                      name="Basis"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitCost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[UnitCost]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitCost]"
+                      name="UnitCost"
+                      precision="18"
+                      scale="8"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[EffectivityDateTo]"
+                      length="50"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDateTo]"
+                      name="EffectivityDateTo"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="AssemblyItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="AssemblyDescription" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ItemSeqNumber]"
+                      dataType="numeric"
+                      name="ItemSeqNumber"
+                      precision="8"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OperationSeqNumber]"
+                      dataType="i4"
+                      name="OperationSeqNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ComponentItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ComponentDescription" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PrimaryUOM" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ComponentQuantity]"
+                      dataType="numeric"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AlternateBOMDesignator" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PendingFromECN" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommonOrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SupplySubinventory" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountPerUOM" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[UnitId]"
+                      dataType="i4"
+                      name="UnitId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[LayerId]"
+                      dataType="i4"
+                      name="LayerId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[CopyCount]"
+                      dataType="i4"
+                      name="CopyCount" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemCopied" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[OrgOpSeq]"
+                      dataType="i4"
+                      name="OrgOpSeq" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Basis" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[UnitCost]"
+                      dataType="numeric"
+                      name="UnitCost"
+                      precision="18"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].ExternalColumns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDateTo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="AFLPRD_BOMInvComp_MTY_OCD"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AFLPRD_BOMInvComp_MTY]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NAASPB-PRD04\SQL2014.Premise]"
+                  connectionManagerRefId="Package.ConnectionManagers[NAASPB-PRD04\SQL2014.Premise]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[OrganizationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="OrganizationCode"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrganizationCode]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[AssemblyItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="AssemblyItemNumber"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemNumber]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[AssemblyDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="AssemblyDescription"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyDescription]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyDescription]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[AssemblyItemStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AssemblyItemStatus"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemStatus]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AssemblyItemStatus]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[ItemSeqNumber]"
+                      cachedDataType="numeric"
+                      cachedName="ItemSeqNumber"
+                      cachedPrecision="8"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ItemSeqNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemSeqNumber]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[OperationSeqNumber]"
+                      cachedDataType="i4"
+                      cachedName="OperationSeqNumber"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OperationSeqNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OperationSeqNumber]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[ComponentItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ComponentItemNumber"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ComponentItemNumber]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentItemNumber]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[PrimaryUOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PrimaryUOM"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryUOM]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PrimaryUOM]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[EffectivityDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EffectivityDate"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDate]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDate]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[ComponentQuantity]"
+                      cachedDataType="numeric"
+                      cachedName="ComponentQuantity"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ComponentQuantity]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ComponentQuantity]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[CompItemStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompItemStatus"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CompItemStatus]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CompItemStatus]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[AlternateBOMDesignator]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AlternateBOMDesignator"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AlternateBOMDesignator]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[AlternateBOMDesignator]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[PendingFromECN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PendingFromECN"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[PendingFromECN]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[PendingFromECN]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[CommonOrganizationId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CommonOrganizationId"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CommonOrganizationId]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CommonOrganizationId]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[SupplySubinventory]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SupplySubinventory"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[SupplySubinventory]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[SupplySubinventory]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[CountPerUOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CountPerUOM"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CountPerUOM]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CountPerUOM]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[UnitId]"
+                      cachedDataType="i4"
+                      cachedName="UnitId"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[UnitId]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitId]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[LayerId]"
+                      cachedDataType="i4"
+                      cachedName="LayerId"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[LayerId]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[LayerId]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[CopyCount]"
+                      cachedDataType="i4"
+                      cachedName="CopyCount"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CopyCount]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[CopyCount]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[ItemCopied]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ItemCopied"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ItemCopied]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[ItemCopied]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[OrgOpSeq]"
+                      cachedDataType="i4"
+                      cachedName="OrgOpSeq"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OrgOpSeq]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[OrgOpSeq]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[Basis]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Basis"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[Basis]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[Basis]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[UnitCost]"
+                      cachedDataType="numeric"
+                      cachedName="UnitCost"
+                      cachedPrecision="18"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[UnitCost]" />
+                    <inputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].Columns[EffectivityDateTo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EffectivityDateTo"
+                      externalMetadataColumnId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDateTo]"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output].Columns[EffectivityDateTo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="AssemblyDescription" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AssemblyItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssemblyItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ItemSeqNumber]"
+                      dataType="numeric"
+                      name="ItemSeqNumber"
+                      precision="8"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OperationSeqNumber]"
+                      dataType="i4"
+                      name="OperationSeqNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ComponentItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ComponentItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ComponentDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ComponentDescription" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PrimaryUOM" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ComponentQuantity]"
+                      dataType="numeric"
+                      name="ComponentQuantity"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CompItemStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompItemStatus" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[AlternateBOMDesignator]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AlternateBOMDesignator" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[PendingFromECN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PendingFromECN" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CommonOrganizationId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommonOrganizationId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[SupplySubinventory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SupplySubinventory" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CountPerUOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CountPerUOM" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[UnitId]"
+                      dataType="i4"
+                      name="UnitId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[LayerId]"
+                      dataType="i4"
+                      name="LayerId" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[CopyCount]"
+                      dataType="i4"
+                      name="CopyCount" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ItemCopied]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemCopied" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[OrgOpSeq]"
+                      dataType="i4"
+                      name="OrgOpSeq" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[Basis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Basis" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[UnitCost]"
+                      dataType="numeric"
+                      name="UnitCost"
+                      precision="18"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[EffectivityDateTo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EffectivityDateTo" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[DateInserted]"
+                      dataType="dbTimeStamp"
+                      name="DateInserted" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="wstr"
+                      length="100"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input].ExternalColumns[Number]"
+                      dataType="i4"
+                      name="Number" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\AFLPRD_BOMInvComp_MTY.Paths[Flat File Source Output]"
+              endId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DeleteBOM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Delete Rows from Table"
+      DTS:DTSID="{E5873D6F-49B2-4E55-8F7E-1B09C9BE7CB0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DeleteBOM"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9458A579-6528-4B2C-B77A-690D03097D26}"
+          SQLTask:SqlStatementSource="DELETE FROM AFLPRD_BOMInvComp_MTY" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{97D6CE82-1EDE-43CB-A9A1-FB9D7263E4FC}"
+      DTS:From="Package\DeleteBOM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\AFLPRD_BOMInvComp_MTY" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="215,42"
+          Id="Package\AFLPRD_BOMInvComp_MTY"
+          TopLeft="60,211" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\DeleteBOM"
+          TopLeft="94,124" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="164,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\AFLPRD_BOMInvComp_MTY">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="242,42"
+          Id="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD"
+          TopLeft="136,275" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY"
+          TopLeft="134,155" />
+        <EdgeLayout
+          Id="Package\AFLPRD_BOMInvComp_MTY.Paths[Flat File Source Output]"
+          TopLeft="241.5,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,78"
+              Start="0,0"
+              End="15.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="11.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,39"
+                    Point2="15.5,39"
+                    Point3="15.5,43" />
+                  <mssgle:LineSegment
+                    End="15.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AFLPRD_BOMInvComp_MTY\AFLPRD_BOMInvComp_MTY_OCD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

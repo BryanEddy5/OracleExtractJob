@@ -1,0 +1,2023 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/22/2016 12:00:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-440"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{9E3AA799-F262-49B7-8970-3E06386DFADD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="SalesForce_Catalog"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{712C0515-962B-4682-9CE8-3665135FB6E2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BCC1A3D7-4353-43C4-AC1A-6210C0415EF1}"
+      DTS:ObjectName="DestinationConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\eddybc\Desktop\SalesForce_Catalog.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CatalogCode"
+              DTS:DTSID="{7B1DA76F-B332-4A0E-B762-2DC174238D31}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Base"
+              DTS:DTSID="{7152DD71-EF64-477F-81F5-CD33466833C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FinishedCableColor"
+              DTS:DTSID="{A00808C5-2ECF-42A9-93D0-F05F9182F75D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBLetter"
+              DTS:DTSID="{47C7A675-5413-4AB3-9E4D-9912B190B25F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight_kg_per_m"
+              DTS:DTSID="{680F03CC-5CD3-481F-9DBD-C95D396AC66C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DesignTypeDesc"
+              DTS:DTSID="{B56E9F38-21ED-4720-ACC8-DA2EB6D49AE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Jacket"
+              DTS:DTSID="{9FC02298-97D1-4622-B57E-D96D422C9673}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBType"
+              DTS:DTSID="{8890C644-A94A-44DE-8DC6-9B19093D0272}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBDescription"
+              DTS:DTSID="{C99BA460-3C6B-4FE2-A19D-DF179A19D79D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="6"
+              DTS:DataScale="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NominalOD"
+              DTS:DTSID="{C3B0D6F6-9134-45D6-930E-83524F9FEBE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumSubFillers"
+              DTS:DTSID="{1FB12DC9-6734-486F-8E9A-804B9E0A1461}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NumSubPositions"
+              DTS:DTSID="{AD3A8C25-C29A-47E2-A94C-D3FAE0E4EADA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FurcationTube"
+              DTS:DTSID="{94C15055-FAF0-4C54-8F8C-D5C22D0B5BDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CablePasses"
+              DTS:DTSID="{DABEF02A-A201-40FA-80C4-05F5087CE43F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BaseID"
+              DTS:DTSID="{4525AD3F-4B9B-492A-A564-FDE97F5E2581}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BaseCost"
+              DTS:DTSID="{571E3109-FFB4-472B-AFDB-B09888E1F513}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FiberCount"
+              DTS:DTSID="{331EB752-7BE6-4838-A9B0-1C8280FF52FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitOD"
+              DTS:DTSID="{99C81F6A-95FB-4F6B-B419-13C2E0B22F91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OracleItem"
+              DTS:DTSID="{B19300A0-4BE2-4ACF-A39A-921620C7A327}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COLOR__c"
+              DTS:DTSID="{D990D47D-7213-4925-B3E8-628E7D77B33D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoadedBaseCost"
+              DTS:DTSID="{DBF0F6D2-BF28-4FC3-9B2D-F006DA943872}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Armored"
+              DTS:DTSID="{09638A5D-096C-4EE1-9922-325BCAD3DF2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Boxed"
+              DTS:DTSID="{31B0484C-5A6A-43EB-AE15-CD6BA8FC194E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BoxedLength_FT"
+              DTS:DTSID="{97EE507F-7468-4F13-946A-E7A94322D89E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DesignTypeID"
+              DTS:DTSID="{3A09143C-CF61-48F2-A048-C41FD73F3D1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateCreated"
+              DTS:DTSID="{483F5042-4497-4263-963B-412890FCB275}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fiber_Type__c"
+              DTS:DTSID="{A6D87572-1F74-437D-9AFF-02AAD31D7615}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Armor_Type__c"
+              DTS:DTSID="{594C30E2-2EFA-42B2-983C-47C0307F1449}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Packaging__c"
+              DTS:DTSID="{3A73CBC3-9149-43D1-9C81-3280020BC471}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UOM__c"
+              DTS:DTSID="{68936621-0393-4FD4-8A22-FFC20AB99DA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stock__c"
+              DTS:DTSID="{4FD8167A-FC4E-4921-BF80-75D567BC011E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Lead_Time_ID__c"
+              DTS:DTSID="{11573B62-CE41-442D-936F-E593D9368AAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ImageURL__c"
+              DTS:DTSID="{2B27FAE5-7AA8-4CD0-9E62-26207D8F1F40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product_Spec_Link__c"
+              DTS:DTSID="{43C8FF7B-4313-4CE0-8DA3-1A614A00AF0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Min_Order_Quantity__c"
+              DTS:DTSID="{91585EA1-C2DF-490F-B18E-80067BF3BE44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Print_Type__c"
+              DTS:DTSID="{E2F283F3-44C0-4E21-9225-E126819A9D58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="315"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product_Quote_Description__c"
+              DTS:DTSID="{F72D9D21-DF7C-4459-BA80-59D937DA22F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ArmorJacket"
+              DTS:DTSID="{F180BC3C-5CCE-4BD5-9A45-30B59155CD24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FiberID"
+              DTS:DTSID="{6132DBDF-E906-4365-AA7D-A6551746E67F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SetupID"
+              DTS:DTSID="{1F71F91A-DA92-44E3-98C7-DCB5326D05DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Active"
+              DTS:DTSID="{57E0E819-ED05-4A2E-AC4F-18D08AF387E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{DB5D27AC-65A6-4F6E-BAA2-19C043274217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Non_Standard"
+              DTS:DTSID="{E07D29D8-D0FB-4C72-9FDB-B842B1B460D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Standard"
+              DTS:DTSID="{049DCE42-8794-4609-8AE4-6EED25C58283}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DD5E9B17-8883-4851-AF1D-68A1DDC1E72E}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04;Initial Catalog=Premise;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sales Force Catalog Export"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{B101EB00-9832-4051-AE3F-80B53790D6CC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sales Force Catalog Export"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Destination - SalesForce_Catalog_csv">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[CatalogCode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CatalogCode"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[CatalogCode]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CatalogCode]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Base]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Base"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Base]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Base]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[FinishedCableColor]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="FinishedCableColor"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FinishedCableColor]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FinishedCableColor]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[TBLetter]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="TBLetter"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBLetter]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBLetter]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Weight_kg_per_m]"
+                      cachedDataType="numeric"
+                      cachedName="Weight_kg_per_m"
+                      cachedPrecision="10"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Weight_kg_per_m]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Weight_kg_per_m]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[DesignTypeDesc]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DesignTypeDesc"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DesignTypeDesc]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeDesc]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Jacket]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Jacket"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Jacket]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Jacket]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[TBType]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="TBType"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBType]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBType]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[TBDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TBDescription"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBDescription]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBDescription]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[NominalOD]"
+                      cachedDataType="numeric"
+                      cachedName="NominalOD"
+                      cachedPrecision="6"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NominalOD]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NominalOD]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[NumSubFillers]"
+                      cachedDataType="i4"
+                      cachedName="NumSubFillers"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NumSubFillers]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubFillers]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[NumSubPositions]"
+                      cachedDataType="i4"
+                      cachedName="NumSubPositions"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NumSubPositions]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubPositions]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[FurcationTube]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="FurcationTube"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FurcationTube]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FurcationTube]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[CablePasses]"
+                      cachedDataType="ui1"
+                      cachedName="CablePasses"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[CablePasses]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CablePasses]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[BaseID]"
+                      cachedDataType="i4"
+                      cachedName="BaseID"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BaseID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseID]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[BaseCost]"
+                      cachedDataType="numeric"
+                      cachedName="BaseCost"
+                      cachedPrecision="10"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BaseCost]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseCost]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[FiberCount]"
+                      cachedDataType="i2"
+                      cachedName="FiberCount"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FiberCount]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberCount]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[UnitOD]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UnitOD"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[UnitOD]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UnitOD]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[OracleItem]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OracleItem"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[OracleItem]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[OracleItem]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[COLOR__c]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="COLOR__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[COLOR__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[COLOR__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[LoadedBaseCost]"
+                      cachedDataType="numeric"
+                      cachedName="LoadedBaseCost"
+                      cachedPrecision="10"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[LoadedBaseCost]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[LoadedBaseCost]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Armored]"
+                      cachedDataType="bool"
+                      cachedName="Armored"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Armored]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armored]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Boxed]"
+                      cachedDataType="bool"
+                      cachedName="Boxed"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Boxed]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Boxed]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[BoxedLength_FT]"
+                      cachedDataType="i2"
+                      cachedName="BoxedLength_FT"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BoxedLength_FT]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BoxedLength_FT]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[DesignTypeID]"
+                      cachedDataType="i2"
+                      cachedName="DesignTypeID"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DesignTypeID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeID]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[DateCreated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateCreated"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DateCreated]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DateCreated]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Fiber_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Fiber_Type__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Fiber_Type__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Fiber_Type__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Armor_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Armor_Type__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Armor_Type__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armor_Type__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Packaging__c]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Packaging__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Packaging__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Packaging__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[UOM__c]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="UOM__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[UOM__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UOM__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Stock__c]"
+                      cachedDataType="bool"
+                      cachedName="Stock__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Stock__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Stock__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Lead_Time_ID__c]"
+                      cachedDataType="i4"
+                      cachedName="Lead_Time_ID__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Lead_Time_ID__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Lead_Time_ID__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[ImageURL__c]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="ImageURL__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[ImageURL__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ImageURL__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Product_Spec_Link__c]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="Product_Spec_Link__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Product_Spec_Link__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Spec_Link__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Min_Order_Quantity__c]"
+                      cachedDataType="i4"
+                      cachedName="Min_Order_Quantity__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Min_Order_Quantity__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Min_Order_Quantity__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Print_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Print_Type__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Print_Type__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Print_Type__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Product_Quote_Description__c]"
+                      cachedDataType="wstr"
+                      cachedLength="315"
+                      cachedName="Product_Quote_Description__c"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Product_Quote_Description__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Quote_Description__c]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[ArmorJacket]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ArmorJacket"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[ArmorJacket]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ArmorJacket]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[FiberID]"
+                      cachedDataType="i4"
+                      cachedName="FiberID"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FiberID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberID]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[SetupID]"
+                      cachedDataType="i4"
+                      cachedName="SetupID"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[SetupID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[SetupID]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Price]"
+                      cachedDataType="numeric"
+                      cachedName="Price"
+                      cachedPrecision="18"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].Columns[Non_Standard]"
+                      cachedDataType="bool"
+                      cachedName="Non_Standard"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Non_Standard]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Non_Standard]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[CatalogCode]"
+                      dataType="wstr"
+                      length="100"
+                      name="CatalogCode" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Base]"
+                      dataType="wstr"
+                      length="50"
+                      name="Base" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FinishedCableColor]"
+                      dataType="wstr"
+                      length="1"
+                      name="FinishedCableColor" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBLetter]"
+                      dataType="wstr"
+                      length="1"
+                      name="TBLetter" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Weight_kg_per_m]"
+                      dataType="numeric"
+                      name="Weight_kg_per_m"
+                      precision="10"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DesignTypeDesc]"
+                      dataType="wstr"
+                      length="50"
+                      name="DesignTypeDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Jacket]"
+                      dataType="wstr"
+                      length="30"
+                      name="Jacket" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBType]"
+                      dataType="wstr"
+                      length="20"
+                      name="TBType" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[TBDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="TBDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NominalOD]"
+                      dataType="numeric"
+                      name="NominalOD"
+                      precision="6"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NumSubFillers]"
+                      dataType="i4"
+                      name="NumSubFillers" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[NumSubPositions]"
+                      dataType="i4"
+                      name="NumSubPositions" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FurcationTube]"
+                      dataType="wstr"
+                      length="100"
+                      name="FurcationTube" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[CablePasses]"
+                      dataType="ui1"
+                      name="CablePasses" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BaseID]"
+                      dataType="i4"
+                      name="BaseID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BaseCost]"
+                      dataType="numeric"
+                      name="BaseCost"
+                      precision="10"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FiberCount]"
+                      dataType="i2"
+                      name="FiberCount" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[UnitOD]"
+                      dataType="wstr"
+                      length="50"
+                      name="UnitOD" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[OracleItem]"
+                      dataType="wstr"
+                      length="50"
+                      name="OracleItem" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[COLOR__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="COLOR__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[LoadedBaseCost]"
+                      dataType="numeric"
+                      name="LoadedBaseCost"
+                      precision="10"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Armored]"
+                      dataType="bool"
+                      name="Armored" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Boxed]"
+                      dataType="bool"
+                      name="Boxed" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[BoxedLength_FT]"
+                      dataType="i2"
+                      name="BoxedLength_FT" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DesignTypeID]"
+                      dataType="i2"
+                      name="DesignTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[DateCreated]"
+                      dataType="dbTimeStamp"
+                      name="DateCreated" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Fiber_Type__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Fiber_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Armor_Type__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="Armor_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Packaging__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="Packaging__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[UOM__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="UOM__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Stock__c]"
+                      dataType="bool"
+                      name="Stock__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Lead_Time_ID__c]"
+                      dataType="i4"
+                      name="Lead_Time_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[ImageURL__c]"
+                      dataType="wstr"
+                      length="500"
+                      name="ImageURL__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Product_Spec_Link__c]"
+                      dataType="wstr"
+                      length="500"
+                      name="Product_Spec_Link__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Min_Order_Quantity__c]"
+                      dataType="i4"
+                      name="Min_Order_Quantity__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Print_Type__c]"
+                      dataType="wstr"
+                      length="50"
+                      name="Print_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Product_Quote_Description__c]"
+                      dataType="wstr"
+                      length="315"
+                      name="Product_Quote_Description__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[ArmorJacket]"
+                      dataType="wstr"
+                      length="20"
+                      name="ArmorJacket" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[FiberID]"
+                      dataType="i4"
+                      name="FiberID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[SetupID]"
+                      dataType="i4"
+                      name="SetupID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Standard]"
+                      dataType="bool"
+                      name="Standard" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Price]"
+                      dataType="numeric"
+                      name="Price"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input].ExternalColumns[Non_Standard]"
+                      dataType="bool"
+                      name="Non_Standard" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - tblSalesForce_Catalog"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tblSalesForce_Catalog]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CatalogCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[CatalogCode]"
+                      length="100"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CatalogCode]"
+                      name="CatalogCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Base]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Base]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Base]"
+                      name="Base"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FinishedCableColor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FinishedCableColor]"
+                      length="1"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FinishedCableColor]"
+                      name="FinishedCableColor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBLetter]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBLetter]"
+                      length="1"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBLetter]"
+                      name="TBLetter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Weight_kg_per_m]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Weight_kg_per_m]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Weight_kg_per_m]"
+                      name="Weight_kg_per_m"
+                      precision="10"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeDesc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DesignTypeDesc]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeDesc]"
+                      name="DesignTypeDesc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Jacket]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Jacket]"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Jacket]"
+                      name="Jacket"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBType]"
+                      length="20"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBType]"
+                      name="TBType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBDescription]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[TBDescription]"
+                      name="TBDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NominalOD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NominalOD]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NominalOD]"
+                      name="NominalOD"
+                      precision="6"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubFillers]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NumSubFillers]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubFillers]"
+                      name="NumSubFillers"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubPositions]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NumSubPositions]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[NumSubPositions]"
+                      name="NumSubPositions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FurcationTube]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FurcationTube]"
+                      length="100"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FurcationTube]"
+                      name="FurcationTube"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CablePasses]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[CablePasses]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[CablePasses]"
+                      name="CablePasses"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BaseID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseID]"
+                      name="BaseID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseCost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BaseCost]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BaseCost]"
+                      name="BaseCost"
+                      precision="10"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FiberCount]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberCount]"
+                      name="FiberCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UnitOD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[UnitOD]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UnitOD]"
+                      name="UnitOD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[OracleItem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[OracleItem]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[OracleItem]"
+                      name="OracleItem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[COLOR__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[COLOR__c]"
+                      length="10"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[COLOR__c]"
+                      name="COLOR__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[LoadedBaseCost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[LoadedBaseCost]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[LoadedBaseCost]"
+                      name="LoadedBaseCost"
+                      precision="10"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armored]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Armored]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armored]"
+                      name="Armored"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Boxed]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Boxed]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Boxed]"
+                      name="Boxed"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BoxedLength_FT]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BoxedLength_FT]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[BoxedLength_FT]"
+                      name="BoxedLength_FT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DesignTypeID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DesignTypeID]"
+                      name="DesignTypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DateCreated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DateCreated]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[DateCreated]"
+                      name="DateCreated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Fiber_Type__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Fiber_Type__c]"
+                      length="100"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Fiber_Type__c]"
+                      name="Fiber_Type__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armor_Type__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Armor_Type__c]"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Armor_Type__c]"
+                      name="Armor_Type__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Packaging__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Packaging__c]"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Packaging__c]"
+                      name="Packaging__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UOM__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[UOM__c]"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[UOM__c]"
+                      name="UOM__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Stock__c]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Stock__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Stock__c]"
+                      name="Stock__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Lead_Time_ID__c]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Lead_Time_ID__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Lead_Time_ID__c]"
+                      name="Lead_Time_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ImageURL__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[ImageURL__c]"
+                      length="500"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ImageURL__c]"
+                      name="ImageURL__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Spec_Link__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Product_Spec_Link__c]"
+                      length="500"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Spec_Link__c]"
+                      name="Product_Spec_Link__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Min_Order_Quantity__c]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Min_Order_Quantity__c]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Min_Order_Quantity__c]"
+                      name="Min_Order_Quantity__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Print_Type__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Print_Type__c]"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Print_Type__c]"
+                      name="Print_Type__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Quote_Description__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Product_Quote_Description__c]"
+                      length="315"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Product_Quote_Description__c]"
+                      name="Product_Quote_Description__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ArmorJacket]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[ArmorJacket]"
+                      length="20"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[ArmorJacket]"
+                      name="ArmorJacket"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FiberID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[FiberID]"
+                      name="FiberID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[SetupID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[SetupID]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[SetupID]"
+                      name="SetupID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Price]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Price]"
+                      name="Price"
+                      precision="18"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Non_Standard]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Non_Standard]"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].Columns[Non_Standard]"
+                      name="Non_Standard"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[CatalogCode]"
+                      dataType="wstr"
+                      length="100"
+                      name="CatalogCode" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Base]"
+                      dataType="wstr"
+                      length="50"
+                      name="Base" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FinishedCableColor]"
+                      dataType="wstr"
+                      length="1"
+                      name="FinishedCableColor" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBLetter]"
+                      dataType="wstr"
+                      length="1"
+                      name="TBLetter" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Weight_kg_per_m]"
+                      dataType="numeric"
+                      name="Weight_kg_per_m"
+                      precision="10"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DesignTypeDesc]"
+                      dataType="wstr"
+                      length="50"
+                      name="DesignTypeDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Jacket]"
+                      dataType="wstr"
+                      length="30"
+                      name="Jacket" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBType]"
+                      dataType="wstr"
+                      length="20"
+                      name="TBType" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[TBDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="TBDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NominalOD]"
+                      dataType="numeric"
+                      name="NominalOD"
+                      precision="6"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NumSubFillers]"
+                      dataType="i4"
+                      name="NumSubFillers" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[NumSubPositions]"
+                      dataType="i4"
+                      name="NumSubPositions" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FurcationTube]"
+                      dataType="wstr"
+                      length="150"
+                      name="FurcationTube" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[CablePasses]"
+                      dataType="ui1"
+                      name="CablePasses" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BaseID]"
+                      dataType="i4"
+                      name="BaseID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BaseCost]"
+                      dataType="numeric"
+                      name="BaseCost"
+                      precision="10"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FiberCount]"
+                      dataType="i2"
+                      name="FiberCount" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[UnitOD]"
+                      dataType="wstr"
+                      length="50"
+                      name="UnitOD" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[OracleItem]"
+                      dataType="wstr"
+                      length="50"
+                      name="OracleItem" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[COLOR__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="COLOR__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[LoadedBaseCost]"
+                      dataType="numeric"
+                      name="LoadedBaseCost"
+                      precision="10"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Armored]"
+                      dataType="bool"
+                      name="Armored" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Boxed]"
+                      dataType="bool"
+                      name="Boxed" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[BoxedLength_FT]"
+                      dataType="i2"
+                      name="BoxedLength_FT" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DesignTypeID]"
+                      dataType="i2"
+                      name="DesignTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[DateCreated]"
+                      dataType="dbTimeStamp"
+                      name="DateCreated" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Fiber_Type__c]"
+                      dataType="wstr"
+                      length="100"
+                      name="Fiber_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Armor_Type__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="Armor_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Packaging__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="Packaging__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[UOM__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="UOM__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Stock__c]"
+                      dataType="bool"
+                      name="Stock__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Lead_Time_ID__c]"
+                      dataType="i4"
+                      name="Lead_Time_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[ImageURL__c]"
+                      dataType="wstr"
+                      length="500"
+                      name="ImageURL__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Product_Spec_Link__c]"
+                      dataType="wstr"
+                      length="500"
+                      name="Product_Spec_Link__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Min_Order_Quantity__c]"
+                      dataType="i4"
+                      name="Min_Order_Quantity__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Print_Type__c]"
+                      dataType="wstr"
+                      length="50"
+                      name="Print_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Product_Quote_Description__c]"
+                      dataType="wstr"
+                      length="315"
+                      name="Product_Quote_Description__c" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[ArmorJacket]"
+                      dataType="wstr"
+                      length="20"
+                      name="ArmorJacket" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[FiberID]"
+                      dataType="i4"
+                      name="FiberID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[SetupID]"
+                      dataType="i4"
+                      name="SetupID" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Price]"
+                      dataType="numeric"
+                      name="Price"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output].ExternalColumns[Non_Standard]"
+                      dataType="bool"
+                      name="Non_Standard" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[CatalogCode]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[CatalogCode]"
+                      name="CatalogCode" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Base]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Base]"
+                      name="Base" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FinishedCableColor]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FinishedCableColor]"
+                      name="FinishedCableColor" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBLetter]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBLetter]"
+                      name="TBLetter" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Weight_kg_per_m]"
+                      dataType="numeric"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Weight_kg_per_m]"
+                      name="Weight_kg_per_m"
+                      precision="10"
+                      scale="5" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DesignTypeDesc]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DesignTypeDesc]"
+                      name="DesignTypeDesc" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Jacket]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Jacket]"
+                      name="Jacket" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBType]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBType]"
+                      name="TBType" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBDescription]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[TBDescription]"
+                      name="TBDescription" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NominalOD]"
+                      dataType="numeric"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NominalOD]"
+                      name="NominalOD"
+                      precision="6"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NumSubFillers]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NumSubFillers]"
+                      name="NumSubFillers" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NumSubPositions]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[NumSubPositions]"
+                      name="NumSubPositions" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FurcationTube]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FurcationTube]"
+                      name="FurcationTube" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[CablePasses]"
+                      dataType="ui1"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[CablePasses]"
+                      name="CablePasses" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BaseID]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BaseID]"
+                      name="BaseID" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BaseCost]"
+                      dataType="numeric"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BaseCost]"
+                      name="BaseCost"
+                      precision="10"
+                      scale="5" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FiberCount]"
+                      dataType="i2"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FiberCount]"
+                      name="FiberCount" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[UnitOD]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[UnitOD]"
+                      name="UnitOD" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[OracleItem]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[OracleItem]"
+                      name="OracleItem" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[COLOR__c]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[COLOR__c]"
+                      name="COLOR__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[LoadedBaseCost]"
+                      dataType="numeric"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[LoadedBaseCost]"
+                      name="LoadedBaseCost"
+                      precision="10"
+                      scale="5" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Armored]"
+                      dataType="bool"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Armored]"
+                      name="Armored" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Boxed]"
+                      dataType="bool"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Boxed]"
+                      name="Boxed" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BoxedLength_FT]"
+                      dataType="i2"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[BoxedLength_FT]"
+                      name="BoxedLength_FT" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DesignTypeID]"
+                      dataType="i2"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DesignTypeID]"
+                      name="DesignTypeID" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DateCreated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[DateCreated]"
+                      name="DateCreated" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Fiber_Type__c]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Fiber_Type__c]"
+                      name="Fiber_Type__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Armor_Type__c]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Armor_Type__c]"
+                      name="Armor_Type__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Packaging__c]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Packaging__c]"
+                      name="Packaging__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[UOM__c]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[UOM__c]"
+                      name="UOM__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Stock__c]"
+                      dataType="bool"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Stock__c]"
+                      name="Stock__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Lead_Time_ID__c]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Lead_Time_ID__c]"
+                      name="Lead_Time_ID__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ImageURL__c]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ImageURL__c]"
+                      name="ImageURL__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Product_Spec_Link__c]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Product_Spec_Link__c]"
+                      name="Product_Spec_Link__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Min_Order_Quantity__c]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Min_Order_Quantity__c]"
+                      name="Min_Order_Quantity__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FiberID]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[FiberID]"
+                      name="FiberID" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Print_Type__c]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Print_Type__c]"
+                      name="Print_Type__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Product_Quote_Description__c]"
+                      dataType="wstr"
+                      length="315"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Product_Quote_Description__c]"
+                      name="Product_Quote_Description__c" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ArmorJacket]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ArmorJacket]"
+                      name="ArmorJacket" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[SetupID]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[SetupID]"
+                      name="SetupID" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Non_Standard]"
+                      dataType="bool"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Non_Standard]"
+                      name="Non_Standard" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Price]"
+                      dataType="numeric"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[Price]"
+                      name="Price"
+                      precision="18"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Sales Force Catalog Export.Paths[OLE DB Source Output]"
+              endId="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Sales Force Catalog Export"
+          TopLeft="105.5,135.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sales Force Catalog Export">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog"
+          TopLeft="20,4.5" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Sales Force Catalog Export\Destination - SalesForce_Catalog_csv"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Sales Force Catalog Export.Paths[OLE DB Source Output]"
+          TopLeft="133.5,46.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Force Catalog Export\Source - tblSalesForce_Catalog">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
