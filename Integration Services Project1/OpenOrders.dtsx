@@ -7,12 +7,12 @@
   DTS:CreatorName="NAA\eddybc"
   DTS:DTSID="{CC2D2239-69D0-4AE5-BE1C-0DA4879359D3}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="1033"
   DTS:ObjectName="OpenOrders"
   DTS:PackageType="5"
-  DTS:VersionBuild="254"
-  DTS:VersionGUID="{95FFDEDE-34F5-46D8-9148-DDCE69C0E231}">
+  DTS:VersionBuild="255"
+  DTS:VersionGUID="{7724F050-822E-4F34-8130-2557DE36C15D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4895,7 +4895,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6A9A24EC-E0A3-4F90-B4AF-28DB23DCC1C3}"
-          SQLTask:SqlStatementSource="DELETE FROM dbo.AFLPRD_ORDDTLREPT_UPLOAD_CAB&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE &#xA;dbo.AFLPRD_ORDDTLREPT_UPLOAD_CAB&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -6124,7 +6124,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."

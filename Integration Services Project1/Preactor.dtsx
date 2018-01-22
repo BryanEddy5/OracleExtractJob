@@ -7,15 +7,424 @@
   DTS:CreatorName="NAA\eddybc"
   DTS:DTSID="{58C56703-4478-4AFD-8513-B53ADAE4FDDF}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
   DTS:LocaleID="1033"
   DTS:ObjectName="Preactor"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{921679A7-7D72-4FA9-9B45-91BDA379250D}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{6759AB37-3365-445F-BD30-FDFA53425913}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AFLPRD_po_so_PREACTOR_SNF]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="PO SO extract"
+      DTS:DTSID="{063F5DE8-4D69-4A3B-81F8-C1DDAD725427}"
+      DTS:ObjectName="AFLPRD_po_so_PREACTOR_SNF">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\naaspb-preact01\Preactor\PreactorProd\Import-Export Files\AFLPRD_po_so_PREACTOR_SNF.tsv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Item_Number"
+              DTS:DTSID="{3273F601-55D7-4F48-9DF7-E56143871BFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Purchase_Order_Ln_Shp"
+              DTS:DTSID="{0C50E396-9D33-49F4-A4D4-1095FE98ED59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity_Allocated"
+              DTS:DTSID="{D6DCD0C4-0FC0-4B9D-9B7D-08EEA668B805}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales_Order_Ln"
+              DTS:DTSID="{4EEA1A39-CD06-4C5D-BBEE-29F363D16B88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shop_Order_Status"
+              DTS:DTSID="{9D671152-6CC4-4671-88D1-47BD6AFFE5D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_SO_LN"
+              DTS:DTSID="{3CB22731-4898-4D78-986F-9328F503A281}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Item"
+              DTS:DTSID="{E427FFFE-3A42-479E-B5ED-360690F00FC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Qty"
+              DTS:DTSID="{F8E74F0F-FB6F-4E6B-A0BF-EA3ECFA566BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Mult"
+              DTS:DTSID="{CAECBAFD-3E60-4C78-A1ED-DA6F2F989B29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_UOM"
+              DTS:DTSID="{51F2A82F-5B27-4E2B-8374-8D0F3C63C77E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Schd_Ship"
+              DTS:DTSID="{028B7D5D-6461-4822-B81B-69BBEA316C2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer_Name"
+              DTS:DTSID="{2E2523E9-01C4-4F90-A227-593D5D6DB526}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Set_Name"
+              DTS:DTSID="{8540AED0-909D-44FC-B51D-FA356C16636B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Set_Number"
+              DTS:DTSID="{1B29DEEB-1F3E-4F43-9B87-A963278ABC8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shop_ID"
+              DTS:DTSID="{9FD85221-55E5-4B8C-945B-CA99D9CB3ADE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spec_Number"
+              DTS:DTSID="{3CCE5A46-F008-4944-8116-3B103E1266EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mult_Number"
+              DTS:DTSID="{BFE65A24-AA7F-4C4A-9C4D-8C6B978961FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mult_Length"
+              DTS:DTSID="{8EA406F5-ECF1-45A7-9C95-7D2D6E453C6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mult_UOM"
+              DTS:DTSID="{D60B6A78-84D8-4D71-AF9A-957CB9AB7FFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tolerence"
+              DTS:DTSID="{970029FC-ABD8-4E8A-B582-235FE4C12984}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reel_Size"
+              DTS:DTSID="{EEA722CE-781A-4F7A-8539-192DD1FEE474}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Line_Spec"
+              DTS:DTSID="{029B1009-A3DA-4E23-99B4-45B3A2EE3FE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPC_Machine"
+              DTS:DTSID="{A9EEF295-58EF-4C2C-BBBF-4CD938A48F9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPC_Job"
+              DTS:DTSID="{C6C231CC-9E5F-484D-A5C2-84F587835925}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Schd_Start_Date"
+              DTS:DTSID="{572F6E0A-5AFF-486C-9DDB-D325FBAD3FC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Schd_Complete_Date"
+              DTS:DTSID="{B1827BA5-DC82-42BB-93E5-2406BC0F3E9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Prt_Paper"
+              DTS:DTSID="{0CF518AA-739F-4CAB-B68D-E97E14639FA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Printer"
+              DTS:DTSID="{5707D924-95D2-41E5-9AE2-EDB0D3D9DF0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed_Qty"
+              DTS:DTSID="{30483BC9-C187-43EC-B734-945BA14989F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed_Cuts"
+              DTS:DTSID="{534299D3-AF9A-48BA-8B8C-6B0F7DAB1E2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PO"
+              DTS:DTSID="{AD7B38C6-0E19-439A-8D04-09092EB43C8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Internal_Promise_Date"
+              DTS:DTSID="{9B6A1E94-F048-4040-B1C5-7C3E386D3B32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created_by"
+              DTS:DTSID="{A9EC7714-7F06-4092-A202-E31A62AB01AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Collection"
+              DTS:DTSID="{032E1E3F-8DB1-4E88-9DCB-06119C1E7B65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Entry_Date"
+              DTS:DTSID="{15B4FE11-2237-4F09-B116-28367E7CA335}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Item_Desc"
+              DTS:DTSID="{A2B1D747-3782-404E-9291-4D6CB6D5B4A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Item_UOM"
+              DTS:DTSID="{6FF5B715-9ED4-4F0D-B82B-7C22DF2EB467}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Weight"
+              DTS:DTSID="{5AB883BB-8F77-4B46-80C4-91C9D5A23E2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Weight_UOM"
+              DTS:DTSID="{80218783-99C7-42F6-83D8-03CB60B55242}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="70"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="S O_Prod_Cat"
+              DTS:DTSID="{995CDEC2-9602-4616-8795-CF3096BEE2E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="350"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inv_Item_Desc"
+              DTS:DTSID="{9E2023A9-160F-4F08-A7A4-D392B0720F6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inv_Item_UOM"
+              DTS:DTSID="{5D928DC8-8F22-4720-B36B-619C7E1790D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inv_Weight"
+              DTS:DTSID="{F0C4331A-453B-40D8-816A-FD462084C3A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inv_Weight_UOM"
+              DTS:DTSID="{A62D0741-6969-499F-8932-088B089F11F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Inv_Prod_Cat"
+              DTS:DTSID="{3480FCCD-7E24-47E8-8E65-0767838070B7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[AFLPRD_preorders_PREACTOR_SNF]"
       DTS:CreationName="FLATFILE"
@@ -514,7 +923,1958 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{04B0567B-84B5-47F9-B1CC-0513EB72DA87}"
-          SQLTask:SqlStatementSource="DELETE FROM AFLPRD_preorders_PREACTOR_SNF" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE AFLPRD_preorders_PREACTOR_SNF&#xA;&#xA;TRUNCATE TABLE AFLPRD_po_so_PREACTOR_SNF" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PO SO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FE68447B-68FB-4891-AD6D-C39C5C2CA0A8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PO SO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PO SO\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PO SO\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AFLPRD_po_so_PREACTOR_SNF]"
+                  connectionManagerRefId="Package.ConnectionManagers[AFLPRD_po_so_PREACTOR_SNF]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Item_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Item_Number]"
+                      length="50"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Item_Number]"
+                      name="Item_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Purchase_Order_Ln_Shp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Purchase_Order_Ln_Shp]"
+                      length="50"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Purchase_Order_Ln_Shp]"
+                      name="Purchase_Order_Ln_Shp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity_Allocated]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity_Allocated]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity_Allocated]"
+                      name="Quantity_Allocated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Sales_Order_Ln]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales_Order_Ln]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Sales_Order_Ln]"
+                      name="Sales_Order_Ln"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_Order_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shop_Order_Status]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_Order_Status]"
+                      name="Shop_Order_Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[End_SO_LN]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[End_SO_LN]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[End_SO_LN]"
+                      name="End_SO_LN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item]"
+                      name="S O_Item"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Qty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Qty]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Qty]"
+                      name="S O_Qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Mult]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Mult]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Mult]"
+                      name="S O_Mult"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_UOM]"
+                      length="2"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_UOM]"
+                      name="S O_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Schd_Ship]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Schd_Ship]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Schd_Ship]"
+                      name="S O_Schd_Ship"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Customer_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Customer_Name]"
+                      length="50"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Customer_Name]"
+                      name="Customer_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Set_Name]"
+                      length="50"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Name]"
+                      name="Set_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Set_Number]"
+                      length="50"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Number]"
+                      name="Set_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shop_ID]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_ID]"
+                      name="Shop_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Spec_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Spec_Number]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Spec_Number]"
+                      name="Spec_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_Number]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Number]"
+                      name="Mult_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Length]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_Length]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Length]"
+                      name="Mult_Length"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_UOM]"
+                      length="1"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_UOM]"
+                      name="Mult_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Tolerence]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tolerence]"
+                      length="255"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Tolerence]"
+                      name="Tolerence"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Reel_Size]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reel_Size]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Reel_Size]"
+                      name="Reel_Size"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Line_Spec]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Line_Spec]"
+                      length="100"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Line_Spec]"
+                      name="Line_Spec"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Machine]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPC_Machine]"
+                      length="255"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Machine]"
+                      name="SPC_Machine"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Job]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPC_Job]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Job]"
+                      name="SPC_Job"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Start_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Schd_Start_Date]"
+                      length="100"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Start_Date]"
+                      name="Schd_Start_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Complete_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Schd_Complete_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Complete_Date]"
+                      name="Schd_Complete_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Prt_Paper]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Prt_Paper]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Prt_Paper]"
+                      name="Prt_Paper"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Printer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Printer]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Printer]"
+                      name="Printer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Qty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Qty]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Qty]"
+                      name="Completed_Qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Cuts]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Cuts]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Cuts]"
+                      name="Completed_Cuts"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[PO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PO]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[PO]"
+                      name="PO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Internal_Promise_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Internal_Promise_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Internal_Promise_Date]"
+                      name="Internal_Promise_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Created_by]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Created_by]"
+                      length="20"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Created_by]"
+                      name="Created_by"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Collection]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Collection]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Collection]"
+                      name="Collection"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Entry_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Entry_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Entry_Date]"
+                      name="Entry_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item_Desc]"
+                      length="250"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_Desc]"
+                      name="S O_Item_Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item_UOM]"
+                      length="2"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_UOM]"
+                      name="S O_Item_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Weight]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight]"
+                      name="S O_Weight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Weight_UOM]"
+                      length="2"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight_UOM]"
+                      name="S O_Weight_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Prod_Cat]"
+                      length="70"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Prod_Cat]"
+                      name="S O_Prod_Cat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Item_Desc]"
+                      length="350"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_Desc]"
+                      name="Inv_Item_Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Item_UOM]"
+                      length="2"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_UOM]"
+                      name="Inv_Item_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Weight]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight]"
+                      name="Inv_Weight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Weight_UOM]"
+                      length="2"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight_UOM]"
+                      name="Inv_Weight_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Prod_Cat]"
+                      length="100"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Prod_Cat]"
+                      name="Inv_Prod_Cat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Item_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Item_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Purchase_Order_Ln_Shp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Purchase_Order_Ln_Shp" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity_Allocated]"
+                      dataType="i4"
+                      name="Quantity_Allocated" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales_Order_Ln]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Sales_Order_Ln" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shop_Order_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Shop_Order_Status" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[End_SO_LN]"
+                      dataType="r4"
+                      name="End_SO_LN" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="S O_Item" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Qty]"
+                      dataType="i4"
+                      name="S O_Qty" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Mult]"
+                      dataType="i4"
+                      name="S O_Mult" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Schd_Ship]"
+                      dataType="date"
+                      name="S O_Schd_Ship" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Customer_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Set_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Set_Name" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Set_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Set_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shop_ID]"
+                      dataType="i4"
+                      name="Shop_ID" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Spec_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Spec_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_Number]"
+                      dataType="i4"
+                      name="Mult_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_Length]"
+                      dataType="i4"
+                      name="Mult_Length" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Mult_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Mult_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tolerence]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Tolerence" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reel_Size]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Reel_Size" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Line_Spec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Line_Spec" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPC_Machine]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SPC_Machine" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPC_Job]"
+                      dataType="i4"
+                      name="SPC_Job" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Schd_Start_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Schd_Start_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Schd_Complete_Date]"
+                      dataType="date"
+                      name="Schd_Complete_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Prt_Paper]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Prt_Paper" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Printer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Printer" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Qty]"
+                      dataType="i4"
+                      name="Completed_Qty" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Cuts]"
+                      dataType="i4"
+                      name="Completed_Cuts" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PO" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Internal_Promise_Date]"
+                      dataType="dbTimeStamp"
+                      name="Internal_Promise_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Created_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Created_by" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Collection]"
+                      dataType="i4"
+                      name="Collection" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Entry_Date]"
+                      dataType="date"
+                      name="Entry_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="S O_Item_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_Item_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Weight]"
+                      dataType="r4"
+                      name="S O_Weight" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_Weight_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[S O_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="S O_Prod_Cat" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="350"
+                      name="Inv_Item_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Inv_Item_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Weight]"
+                      dataType="r4"
+                      name="Inv_Weight" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Inv_Weight_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Inv_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Inv_Prod_Cat" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PO SO\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AFLPRD_po_so_PREACTOR_SNF]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PO SO\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+                  connectionManagerRefId="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Item_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Item_Number"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item_Number]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Item_Number]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Purchase_Order_Ln_Shp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Purchase_Order_Ln_Shp"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Purchase_Order_Ln_Shp]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Purchase_Order_Ln_Shp]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity_Allocated]"
+                      cachedDataType="i4"
+                      cachedName="Quantity_Allocated"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity_Allocated]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity_Allocated]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sales_Order_Ln]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Sales_Order_Ln"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Order_Ln]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Sales_Order_Ln]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Shop_Order_Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Shop_Order_Status"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Shop_Order_Status]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_Order_Status]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[End_SO_LN]"
+                      cachedDataType="r4"
+                      cachedName="End_SO_LN"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End_SO_LN]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[End_SO_LN]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Mult]"
+                      cachedDataType="i4"
+                      cachedName="S O_Mult"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Mult]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Mult]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="S O_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Schd_Ship]"
+                      cachedDataType="date"
+                      cachedName="S O_Schd_Ship"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Schd_Ship]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Schd_Ship]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Customer_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer_Name"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Customer_Name]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Set_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Set_Name"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Set_Name]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Name]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Set_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Set_Number"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Set_Number]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Set_Number]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Shop_ID]"
+                      cachedDataType="i4"
+                      cachedName="Shop_ID"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Shop_ID]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Shop_ID]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Spec_Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Spec_Number"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Spec_Number]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Spec_Number]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mult_Number]"
+                      cachedDataType="i4"
+                      cachedName="Mult_Number"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_Number]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Number]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mult_Length]"
+                      cachedDataType="i4"
+                      cachedName="Mult_Length"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_Length]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_Length]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mult_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Mult_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Mult_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tolerence]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Tolerence"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tolerence]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Tolerence]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Reel_Size]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Reel_Size"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reel_Size]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Reel_Size]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Line_Spec]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Line_Spec"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Line_Spec]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Line_Spec]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SPC_Machine]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="SPC_Machine"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPC_Machine]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Machine]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SPC_Job]"
+                      cachedDataType="i4"
+                      cachedName="SPC_Job"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPC_Job]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[SPC_Job]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Schd_Complete_Date]"
+                      cachedDataType="date"
+                      cachedName="Schd_Complete_Date"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Schd_Complete_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Complete_Date]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Prt_Paper]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Prt_Paper"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prt_Paper]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Prt_Paper]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Printer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Printer"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Printer]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Printer]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Completed_Qty]"
+                      cachedDataType="i4"
+                      cachedName="Completed_Qty"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Qty]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Qty]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Completed_Cuts]"
+                      cachedDataType="i4"
+                      cachedName="Completed_Cuts"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Cuts]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Cuts]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PO"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PO]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[PO]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Internal_Promise_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Internal_Promise_Date"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Internal_Promise_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Internal_Promise_Date]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Created_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Created_by"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created_by]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Created_by]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Collection]"
+                      cachedDataType="i4"
+                      cachedName="Collection"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Collection]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Collection]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Entry_Date]"
+                      cachedDataType="date"
+                      cachedName="Entry_Date"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Entry_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Entry_Date]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Item_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="S O_Item_Desc"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item_Desc]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_Desc]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Item_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="S O_Item_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Weight]"
+                      cachedDataType="r4"
+                      cachedName="S O_Weight"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Weight]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Weight_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="S O_Weight_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Weight_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Weight_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Prod_Cat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="S O_Prod_Cat"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Prod_Cat]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Prod_Cat]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inv_Item_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="350"
+                      cachedName="Inv_Item_Desc"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Item_Desc]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_Desc]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inv_Item_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Inv_Item_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Item_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Item_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inv_Weight]"
+                      cachedDataType="r4"
+                      cachedName="Inv_Weight"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Weight]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inv_Weight_UOM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Inv_Weight_UOM"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Weight_UOM]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Weight_UOM]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Inv_Prod_Cat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Inv_Prod_Cat"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Prod_Cat]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Inv_Prod_Cat]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Qty]"
+                      cachedDataType="i4"
+                      cachedName="S O_Qty"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Qty]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Qty]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[S O_Item]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="S O_Item"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[S O_Item]" />
+                    <inputColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Schd_Start_Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Schd_Start_Date"
+                      externalMetadataColumnId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Schd_Start_Date]"
+                      lineageId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output].Columns[Schd_Start_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Item_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Purchase_Order_Ln_Shp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Purchase_Order_Ln_Shp" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity_Allocated]"
+                      dataType="r4"
+                      name="Quantity_Allocated" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales_Order_Ln]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Sales_Order_Ln" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Shop_Order_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Shop_Order_Status" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[End_SO_LN]"
+                      dataType="r4"
+                      name="End_SO_LN" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="S O_Item" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Qty]"
+                      dataType="i4"
+                      name="S O_Qty" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Mult]"
+                      dataType="i2"
+                      name="S O_Mult" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Schd_Ship]"
+                      dataType="dbTimeStamp"
+                      name="S O_Schd_Ship" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="75"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Set_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Set_Name" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Set_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Set_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Shop_ID]"
+                      dataType="i4"
+                      name="Shop_ID" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Spec_Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Spec_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_Number]"
+                      dataType="i4"
+                      name="Mult_Number" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_Length]"
+                      dataType="i4"
+                      name="Mult_Length" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mult_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Mult_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tolerence]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Tolerence" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reel_Size]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Reel_Size" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Line_Spec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Line_Spec" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPC_Machine]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SPC_Machine" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPC_Job]"
+                      dataType="i4"
+                      name="SPC_Job" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Schd_Start_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Schd_Start_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Schd_Complete_Date]"
+                      dataType="dbTimeStamp"
+                      name="Schd_Complete_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prt_Paper]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Prt_Paper" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Printer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Printer" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Qty]"
+                      dataType="i4"
+                      name="Completed_Qty" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Completed_Cuts]"
+                      dataType="i4"
+                      name="Completed_Cuts" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PO" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Internal_Promise_Date]"
+                      dataType="dbTimeStamp"
+                      name="Internal_Promise_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Created_by" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Collection]"
+                      dataType="i4"
+                      name="Collection" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Entry_Date]"
+                      dataType="dbTimeStamp"
+                      name="Entry_Date" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="S O_Item_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_Item_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Weight]"
+                      dataType="r4"
+                      name="S O_Weight" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="S O_Weight_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[S O_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="S O_Prod_Cat" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Item_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="350"
+                      name="Inv_Item_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Item_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Inv_Item_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Weight]"
+                      dataType="r4"
+                      name="Inv_Weight" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Weight_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Inv_Weight_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inv_Prod_Cat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Inv_Prod_Cat" />
+                    <externalMetadataColumn
+                      refId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateInserted]"
+                      dataType="dbTimeStamp"
+                      name="DateInserted" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PO SO\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PO SO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PO SO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PO SO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PO SO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PO SO.Paths[Flat File Source Output]"
+              endId="Package\PO SO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\PO SO\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1999,7 +4359,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2742,6 +5102,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\PreOrders" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F4F78A61-EA23-4F19-85B0-7056DE82EF48}"
+      DTS:From="Package\PreOrders"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\PO SO" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2754,11 +5122,15 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="133,42"
           Id="Package\Clear Tables"
           TopLeft="185,69" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\PO SO"
+          TopLeft="183,323" />
         <NodeLayout
           Size="128,42"
           Id="Package\PreOrders"
@@ -2785,14 +5157,111 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="249,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.5,84"
+              Start="0,0"
+              End="-11.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="-4,42" />
+                  <mssgle:LineSegment
+                    End="-7.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.5,42"
+                    Point2="-11.5,42"
+                    Point3="-11.5,46" />
+                  <mssgle:LineSegment
+                    End="-11.5,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\PreOrders">
+    design-time-name="Package\PO SO">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\PO SO\OLE DB Destination"
+          TopLeft="402,277" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\PO SO\Flat File Source"
+          TopLeft="422,89" />
+        <EdgeLayout
+          Id="Package\PO SO.Paths[Flat File Source Output]"
+          TopLeft="497.5,131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10,146"
+              Start="0,0"
+              End="-10,138.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69"
+                    Point2="0,73"
+                    Point3="-4,73" />
+                  <mssgle:LineSegment
+                    End="-6,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6,73"
+                    Point2="-10,73"
+                    Point3="-10,77" />
+                  <mssgle:LineSegment
+                    End="-10,138.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PO SO\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PreOrders">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="173,42"
           Id="Package\PreOrders\OLE DB Destination"
@@ -2820,7 +5289,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
