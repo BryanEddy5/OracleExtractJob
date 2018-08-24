@@ -1,0 +1,3394 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/23/2018 4:00:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPB-EDDYBC-P51"
+  DTS:CreatorName="NAA\eddybc"
+  DTS:DTSID="{6388878B-2AB8-4FD5-8E2A-5024DF46FB81}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.98"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MarginExtract"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{6965CC2C-D87E-4CAA-8487-2DCD183F094F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NAASPB-PRD04.OracleExtracts2014]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04B0567B-84B5-47F9-B1CC-0513EB72DA87}"
+      DTS:ObjectName="NAASPB-PRD04.OracleExtracts2014">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NAASPB-PRD04\SQL2014;Initial Catalog=Premise;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[rp_revenue_margin_extract_POBI]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="rp_revenue_margin_extract_POBI"
+      DTS:DTSID="{38D657F7-21D5-4FED-8839-3E8BCE9033EB}"
+      DTS:ObjectName="rp_revenue_margin_extract_POBI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\NAAftp-srv01\openshare\extracts\R12_AFLPRD\rp_revenue_margin_extract_POBI.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORG_CODE"
+              DTS:DTSID="{C2FFB3E1-4DEA-45F3-98CA-6411801200FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUSINESS_UNIT"
+              DTS:DTSID="{5BC93C25-004F-4362-B3CF-87784755F20A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TRANSACTION_TYPE"
+              DTS:DTSID="{43D2259A-7F1D-4E4C-876C-78A29174B5E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORDER_NUMBER"
+              DTS:DTSID="{53CB243D-2E43-49C4-B26C-C784631D7D65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SO_LINE_NUMBER"
+              DTS:DTSID="{1782FDFE-3F6A-48F2-9BBF-618887091B67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="INVOICE_NUMBER"
+              DTS:DTSID="{F40105E9-ABDB-4C50-BE80-F391B01981C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="INV_LINE_NUMBER"
+              DTS:DTSID="{9B9AC489-C684-4C9F-BFD2-DD1066CC5CD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TRANSACTION_DATE"
+              DTS:DTSID="{FE835C64-A497-4FE8-9E33-CADC5B6688C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TRANSACTION_PERIOD"
+              DTS:DTSID="{5DD09F5D-0453-452C-91AE-B77BB8A8D4E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ITEM_NUMBER"
+              DTS:DTSID="{3096BF99-7824-4D8B-9CBF-080384414FFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ITEM_DESCRIPTION"
+              DTS:DTSID="{E50A00D6-050E-46DD-B1DD-37230163F461}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_NUMBER"
+              DTS:DTSID="{A0E999CB-E7A9-4939-86AF-DC51F262325D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_CLASS"
+              DTS:DTSID="{051A3874-E2FC-4C1E-BE4D-4C9175BDB747}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_CATEGORY"
+              DTS:DTSID="{41558E39-2CA3-49E9-AD8F-5CCF85BA5794}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_NAME"
+              DTS:DTSID="{4245AB63-7687-4D94-9D8D-6667B483E3FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_STATE"
+              DTS:DTSID="{7615C893-7459-4579-92AB-00EDED261968}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_COUNTRY"
+              DTS:DTSID="{C8856727-CB70-4951-B1FB-CFCFCF756BA9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BILL_TO_POSTAL_CODE"
+              DTS:DTSID="{5FEBFEA1-9F83-4810-B0C4-D46CA9FAD6BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_NUMBER"
+              DTS:DTSID="{F569B501-7686-42D8-8209-2CA1E387D54A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_CLASS"
+              DTS:DTSID="{3B8A557E-5C56-4469-9FA4-58E06CE5129D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_TERRITORY"
+              DTS:DTSID="{D5D2BEE8-FBCB-4874-B8F7-B1A5690D6305}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_NAME"
+              DTS:DTSID="{24B680A8-00D8-42B1-9404-03F57C2F429D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_STATE"
+              DTS:DTSID="{523F9FB7-2796-425D-B692-187D9505A9D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_COUNTRY"
+              DTS:DTSID="{215B0F61-6D35-4F36-AEF4-E23A8BF1166D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_POSTAL_CODE"
+              DTS:DTSID="{2030C2B2-D877-4F8E-8E33-FDC630F4F32C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UNIT_OF_MEASURE"
+              DTS:DTSID="{54919424-5E8A-4A4C-9F18-FF9A38456CE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REVENUE"
+              DTS:DTSID="{CFDE589B-0E91-49F8-A947-2994DC783F70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUANTITY"
+              DTS:DTSID="{3465E963-8D1D-4AFD-A92C-716455E3E397}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORY1"
+              DTS:DTSID="{BD84DF4E-09B6-4859-AC10-5EEC38009AE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORY2"
+              DTS:DTSID="{2FA558D3-C446-4B00-9394-680908221C20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORY3"
+              DTS:DTSID="{9D423465-D95A-4D0D-9EC3-55F77C9BE61A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORY4"
+              DTS:DTSID="{7F37CFB9-5AD1-428B-BF23-E84395265A9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORY5"
+              DTS:DTSID="{CFC1650D-FF48-45C5-8556-61227628ECED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURR_MATERIAL_COST"
+              DTS:DTSID="{3CD0B76B-68C9-4735-AB31-68746A800488}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURR_RESOURCE_COST"
+              DTS:DTSID="{1ECA3634-1F42-43EC-B12C-7ABB477562F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURR_OVERHEAD_COST"
+              DTS:DTSID="{2529E01E-95A7-4C3C-AB19-4F7C656F4E27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURR_OUTSIDE_PROCESSING_COST"
+              DTS:DTSID="{D3E5FFA8-91BA-4F6C-A6BB-CD21C07E07DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_MATERIAL_COST"
+              DTS:DTSID="{5E126D82-62DF-49E6-8BAF-F905D1B8D05E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_RESOURCE_COST"
+              DTS:DTSID="{2DB36E24-B140-45C6-B7C2-091FEA9202EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_OVERHEAD_COST"
+              DTS:DTSID="{74CE289C-0F5F-44A0-A183-84987739DB94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_OUTSIDE_PROCESSING_COST"
+              DTS:DTSID="{6869B961-AA71-4C9A-9F84-83B168FBCD2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCHEDULING_APPROVAL"
+              DTS:DTSID="{F6C497E8-8B55-4AFB-8306-1FA825D5D36C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGENT"
+              DTS:DTSID="{E8A0F72D-ADEA-4D5D-A2B2-A8F1FEE0BCA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AFL_ACCOUNT"
+              DTS:DTSID="{F8E4982D-B9C0-4EA3-A7C3-CE7515078567}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AFL_NATIONAL"
+              DTS:DTSID="{200E8F9C-92DF-49B8-B76F-37D9BB6BA12C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="INSIDE_SALES"
+              DTS:DTSID="{E2624F48-8662-47F2-8906-6DE69E0AE5B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PURCHASE_ORDER"
+              DTS:DTSID="{988E4987-89BB-4ACD-AE44-206707F65A06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EXTRACT_DATE"
+              DTS:DTSID="{9A7E042E-278D-4319-861E-0F38BBF76E29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BOOKED_DATE"
+              DTS:DTSID="{F756A87B-111B-4A9F-9EAB-AA0678B6F1D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCHEDULE_PERIOD"
+              DTS:DTSID="{E56B15E8-E2DE-46B6-B751-F9382EC142A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALES_CHANNEL"
+              DTS:DTSID="{AB24387A-0813-451F-BA6C-D5C84864871E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REQUEST_DATE"
+              DTS:DTSID="{9C79C0AD-CD5D-4223-8C67-61C5D3C5D211}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROMISE_DATE"
+              DTS:DTSID="{73BB7CEF-80A3-46EB-8DE3-D6B7CAB691FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORDER_TYPE"
+              DTS:DTSID="{86AC9D12-2305-478B-9EF7-E64C71F49068}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTIAL_ALLOWED"
+              DTS:DTSID="{3A0074F4-C50D-411E-899E-A96354734E2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RESERVATION_FLAG"
+              DTS:DTSID="{C139C3B6-BAF8-4C22-98E6-53B9048E73DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_TO_CITY"
+              DTS:DTSID="{D9D0ABB5-2F43-4017-A3D1-9EF6461B9DE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOB_CODE"
+              DTS:DTSID="{3C310179-ED72-4328-A782-3D7EA9DE1F9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FREIGHT_TERMS_CODE"
+              DTS:DTSID="{B07E3793-A1AF-4E5F-AD9C-3055DB5A2175}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HOLD_FLAG"
+              DTS:DTSID="{88432C27-6D54-4F3E-B526-FFE2C8C95815}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MULTI_ORG_SHIP_SET"
+              DTS:DTSID="{D420C0A5-4845-4E02-8114-2D94E480DF71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MAKE_BUY_CODE"
+              DTS:DTSID="{FD1C8ECD-138C-4D44-8240-75B334BB1F3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SHIP_SET_NUMBER"
+              DTS:DTSID="{72743397-E36A-44A2-8974-3450E20E2E1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SO_LINE_FREIGHT_CARRIER"
+              DTS:DTSID="{F865CAF1-7E72-47FD-82D8-9912D1FA0D9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCHEDULE_APPROVAL_DATE"
+              DTS:DTSID="{AB3CF24C-FD03-43BA-83A3-E4D898537F17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SO_LINE_CREATE_DATE"
+              DTS:DTSID="{33DB5431-ED40-4BE5-8722-488709C32FF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QTY_IN_LBS"
+              DTS:DTSID="{D5CECB65-7846-4739-8F5B-8DE3FCB1CDDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMER_UOM"
+              DTS:DTSID="{98E348A3-265F-42FB-959D-5961E508583E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPECIFICATION"
+              DTS:DTSID="{D5DBDD62-A08A-4890-A52C-098BC2FBB066}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUOTE_NUMBER"
+              DTS:DTSID="{3D5FA83D-EEFB-4697-811B-3F87635E2FF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NEW_PRODUCT"
+              DTS:DTSID="{146397E5-9941-4CB8-A149-DE5DFDA8B381}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NEW_PRODUCT_CATEGORY"
+              DTS:DTSID="{745301F7-5353-41E2-A11A-BB65DE0EC7E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_COST_UPDATE_DATE"
+              DTS:DTSID="{62E2BCED-8F14-4F65-94D9-63072797964C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="12"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIMARY_QUANTITY"
+              DTS:DTSID="{8A9727F4-72FE-4B0C-A595-1F72805AF133}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRIMARY_UOM_CODE"
+              DTS:DTSID="{5CA53DAE-94E9-4D60-B556-937C75A708A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="INVOICE_SOURCE"
+              DTS:DTSID="{6DBFAA2C-22F7-47FF-A18A-6419A2953FC7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUOTE_TYPE"
+              DTS:DTSID="{67FBE4C5-30FE-4612-8933-C927077E6744}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_SOURCE"
+              DTS:DTSID="{E609BB56-A5FB-4221-9F84-6539183F3A3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NEW_PRODUCT_TYPE"
+              DTS:DTSID="{6127FDF4-262D-438A-B2E8-9CDD9FE613CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMMENTS"
+              DTS:DTSID="{643ECE07-2104-4D4E-A096-FF241E2B3A2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CURR_MATERIAL_OVERHEAD_COST"
+              DTS:DTSID="{3F79D03E-94EF-42C5-B7FB-BA166085B9B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTUAL_MATERIAL_OVERHEAD_COST"
+              DTS:DTSID="{435D6428-6D46-417D-B3B6-3BA3880A76A6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Revenue Margin Extract"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{927049a5-96c6-462b-8238-9bec0c604f4b}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Revenue Margin Extract">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Revenue Margin Extract.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{e1804eff-3956-4c47-b89d-adc1d1e970d9}"
+          DTS:EventID="683999340"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{c72eaedd-8549-43cf-ab17-9cd08f09e7d5}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables />
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Revenue Margin Extract\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Revenue Margin Extract\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Revenue Margin Extract\Derived Column.Inputs[Derived Column Input].Columns[REVENUE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="REVENUE"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REVENUE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Revenue Margin Extract\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output].Columns[IsNumeric]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output].Columns[IsNumeric]"
+                      name="IsNumeric"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)#{Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REVENUE]} == (DT_I4)#{Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REVENUE]} ? 1 : 0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)REVENUE == (DT_I4)REVENUE ? 1 : 0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Revenue Margin Extract\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Revenue Margin Extract\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Revenue Margin Extract\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[rp_revenue_margin_extract_POBI]"
+                  connectionManagerRefId="Package.ConnectionManagers[rp_revenue_margin_extract_POBI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORG_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORG_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORG_CODE]"
+                      name="ORG_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BUSINESS_UNIT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BUSINESS_UNIT]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BUSINESS_UNIT]"
+                      name="BUSINESS_UNIT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_TYPE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_TYPE]"
+                      name="TRANSACTION_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORDER_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDER_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORDER_NUMBER]"
+                      name="ORDER_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_NUMBER]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_NUMBER]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_NUMBER]"
+                      name="SO_LINE_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INVOICE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INVOICE_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INVOICE_NUMBER]"
+                      name="INVOICE_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INV_LINE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INV_LINE_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INV_LINE_NUMBER]"
+                      name="INV_LINE_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_PERIOD]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_PERIOD]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[TRANSACTION_PERIOD]"
+                      name="TRANSACTION_PERIOD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ITEM_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ITEM_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ITEM_NUMBER]"
+                      name="ITEM_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ITEM_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ITEM_DESCRIPTION]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ITEM_DESCRIPTION]"
+                      name="ITEM_DESCRIPTION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_NUMBER]"
+                      name="BILL_TO_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_CLASS]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_CLASS]"
+                      name="BILL_TO_CLASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_CATEGORY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_CATEGORY]"
+                      name="BILL_TO_CATEGORY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_NAME]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_NAME]"
+                      name="BILL_TO_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_STATE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_STATE]"
+                      name="BILL_TO_STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_COUNTRY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_COUNTRY]"
+                      name="BILL_TO_COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_POSTAL_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_POSTAL_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BILL_TO_POSTAL_CODE]"
+                      name="BILL_TO_POSTAL_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_NUMBER]"
+                      name="SHIP_TO_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_CLASS]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_CLASS]"
+                      name="SHIP_TO_CLASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_TERRITORY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_TERRITORY]"
+                      name="SHIP_TO_TERRITORY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_NAME]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_NAME]"
+                      name="SHIP_TO_NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_STATE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_STATE]"
+                      name="SHIP_TO_STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_COUNTRY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_COUNTRY]"
+                      name="SHIP_TO_COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_POSTAL_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_POSTAL_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_POSTAL_CODE]"
+                      name="SHIP_TO_POSTAL_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UNIT_OF_MEASURE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UNIT_OF_MEASURE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[UNIT_OF_MEASURE]"
+                      name="UNIT_OF_MEASURE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REVENUE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REVENUE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REVENUE]"
+                      name="REVENUE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUANTITY]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUANTITY]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUANTITY]"
+                      name="QUANTITY"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY1]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY1]"
+                      name="CATEGORY1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY2]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY2]"
+                      name="CATEGORY2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY3]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY3]"
+                      name="CATEGORY3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY4]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY4]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY4]"
+                      name="CATEGORY4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY5]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY5]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CATEGORY5]"
+                      name="CATEGORY5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_MATERIAL_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_MATERIAL_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_MATERIAL_COST]"
+                      name="CURR_MATERIAL_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_RESOURCE_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_RESOURCE_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_RESOURCE_COST]"
+                      name="CURR_RESOURCE_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_OVERHEAD_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_OVERHEAD_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_OVERHEAD_COST]"
+                      name="CURR_OVERHEAD_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_OUTSIDE_PROCESSING_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_OUTSIDE_PROCESSING_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_OUTSIDE_PROCESSING_COST]"
+                      name="CURR_OUTSIDE_PROCESSING_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_MATERIAL_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_MATERIAL_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_MATERIAL_COST]"
+                      name="ACTUAL_MATERIAL_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_RESOURCE_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_RESOURCE_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_RESOURCE_COST]"
+                      name="ACTUAL_RESOURCE_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_OVERHEAD_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_OVERHEAD_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_OVERHEAD_COST]"
+                      name="ACTUAL_OVERHEAD_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_OUTSIDE_PROCESSING_COST]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_OUTSIDE_PROCESSING_COST]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_OUTSIDE_PROCESSING_COST]"
+                      name="ACTUAL_OUTSIDE_PROCESSING_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULING_APPROVAL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULING_APPROVAL]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULING_APPROVAL]"
+                      name="SCHEDULING_APPROVAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AGENT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AGENT]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AGENT]"
+                      name="AGENT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AFL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AFL_ACCOUNT]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AFL_ACCOUNT]"
+                      name="AFL_ACCOUNT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AFL_NATIONAL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AFL_NATIONAL]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[AFL_NATIONAL]"
+                      name="AFL_NATIONAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INSIDE_SALES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INSIDE_SALES]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INSIDE_SALES]"
+                      name="INSIDE_SALES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PURCHASE_ORDER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PURCHASE_ORDER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PURCHASE_ORDER]"
+                      name="PURCHASE_ORDER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EXTRACT_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EXTRACT_DATE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[EXTRACT_DATE]"
+                      name="EXTRACT_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BOOKED_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BOOKED_DATE]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[BOOKED_DATE]"
+                      name="BOOKED_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULE_PERIOD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULE_PERIOD]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULE_PERIOD]"
+                      name="SCHEDULE_PERIOD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SALES_CHANNEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALES_CHANNEL]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SALES_CHANNEL]"
+                      name="SALES_CHANNEL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REQUEST_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REQUEST_DATE]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[REQUEST_DATE]"
+                      name="REQUEST_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PROMISE_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PROMISE_DATE]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PROMISE_DATE]"
+                      name="PROMISE_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORDER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDER_TYPE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ORDER_TYPE]"
+                      name="ORDER_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PARTIAL_ALLOWED]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PARTIAL_ALLOWED]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PARTIAL_ALLOWED]"
+                      name="PARTIAL_ALLOWED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[RESERVATION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RESERVATION_FLAG]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[RESERVATION_FLAG]"
+                      name="RESERVATION_FLAG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_CITY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_TO_CITY]"
+                      name="SHIP_TO_CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[FOB_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FOB_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[FOB_CODE]"
+                      name="FOB_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[FREIGHT_TERMS_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FREIGHT_TERMS_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[FREIGHT_TERMS_CODE]"
+                      name="FREIGHT_TERMS_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[HOLD_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HOLD_FLAG]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[HOLD_FLAG]"
+                      name="HOLD_FLAG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[MULTI_ORG_SHIP_SET]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MULTI_ORG_SHIP_SET]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[MULTI_ORG_SHIP_SET]"
+                      name="MULTI_ORG_SHIP_SET"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[MAKE_BUY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAKE_BUY_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[MAKE_BUY_CODE]"
+                      name="MAKE_BUY_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_SET_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_SET_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SHIP_SET_NUMBER]"
+                      name="SHIP_SET_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_FREIGHT_CARRIER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_FREIGHT_CARRIER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_FREIGHT_CARRIER]"
+                      name="SO_LINE_FREIGHT_CARRIER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULE_APPROVAL_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULE_APPROVAL_DATE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SCHEDULE_APPROVAL_DATE]"
+                      name="SCHEDULE_APPROVAL_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_CREATE_DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_CREATE_DATE]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SO_LINE_CREATE_DATE]"
+                      name="SO_LINE_CREATE_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QTY_IN_LBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QTY_IN_LBS]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QTY_IN_LBS]"
+                      name="QTY_IN_LBS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CUSTOMER_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_UOM]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CUSTOMER_UOM]"
+                      name="CUSTOMER_UOM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SPECIFICATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPECIFICATION]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[SPECIFICATION]"
+                      name="SPECIFICATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUOTE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUOTE_NUMBER]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUOTE_NUMBER]"
+                      name="QUOTE_NUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT]"
+                      name="NEW_PRODUCT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT_CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT_CATEGORY]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT_CATEGORY]"
+                      name="NEW_PRODUCT_CATEGORY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_COST_UPDATE_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_COST_UPDATE_DATE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_COST_UPDATE_DATE]"
+                      name="ACTUAL_COST_UPDATE_DATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PRIMARY_QUANTITY]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRIMARY_QUANTITY]"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PRIMARY_QUANTITY]"
+                      name="PRIMARY_QUANTITY"
+                      precision="12"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PRIMARY_UOM_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRIMARY_UOM_CODE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[PRIMARY_UOM_CODE]"
+                      name="PRIMARY_UOM_CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INVOICE_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INVOICE_SOURCE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[INVOICE_SOURCE]"
+                      name="INVOICE_SOURCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUOTE_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUOTE_TYPE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[QUOTE_TYPE]"
+                      name="QUOTE_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[DATA_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATA_SOURCE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[DATA_SOURCE]"
+                      name="DATA_SOURCE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT_TYPE]"
+                      length="50"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[NEW_PRODUCT_TYPE]"
+                      name="NEW_PRODUCT_TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[COMMENTS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COMMENTS]"
+                      length="500"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[COMMENTS]"
+                      name="COMMENTS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_MATERIAL_OVERHEAD_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_MATERIAL_OVERHEAD_COST]"
+                      length="100"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[CURR_MATERIAL_OVERHEAD_COST]"
+                      name="CURR_MATERIAL_OVERHEAD_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_MATERIAL_OVERHEAD_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_MATERIAL_OVERHEAD_COST]"
+                      length="100"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].Columns[ACTUAL_MATERIAL_OVERHEAD_COST]"
+                      name="ACTUAL_MATERIAL_OVERHEAD_COST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORG_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ORG_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BUSINESS_UNIT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUSINESS_UNIT" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TRANSACTION_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDER_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ORDER_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_NUMBER]"
+                      dataType="i8"
+                      name="SO_LINE_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INVOICE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INVOICE_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INV_LINE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INV_LINE_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="date"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TRANSACTION_PERIOD]"
+                      dataType="date"
+                      name="TRANSACTION_PERIOD" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ITEM_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ITEM_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ITEM_DESCRIPTION]"
+                      codePage="1252"
+                      dataType="text"
+                      name="ITEM_DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_CLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_CATEGORY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BILL_TO_POSTAL_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BILL_TO_POSTAL_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_CLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_CLASS" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_TERRITORY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_POSTAL_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_POSTAL_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UNIT_OF_MEASURE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UNIT_OF_MEASURE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REVENUE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REVENUE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUANTITY]"
+                      dataType="numeric"
+                      name="QUANTITY"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORY1" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORY2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORY3" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORY4" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CATEGORY5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORY5" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_MATERIAL_COST]"
+                      dataType="cy"
+                      name="CURR_MATERIAL_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_RESOURCE_COST]"
+                      dataType="cy"
+                      name="CURR_RESOURCE_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_OVERHEAD_COST]"
+                      dataType="cy"
+                      name="CURR_OVERHEAD_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_OUTSIDE_PROCESSING_COST]"
+                      dataType="cy"
+                      name="CURR_OUTSIDE_PROCESSING_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_MATERIAL_COST]"
+                      dataType="cy"
+                      name="ACTUAL_MATERIAL_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_RESOURCE_COST]"
+                      dataType="cy"
+                      name="ACTUAL_RESOURCE_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_OVERHEAD_COST]"
+                      dataType="cy"
+                      name="ACTUAL_OVERHEAD_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_OUTSIDE_PROCESSING_COST]"
+                      dataType="cy"
+                      name="ACTUAL_OUTSIDE_PROCESSING_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULING_APPROVAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SCHEDULING_APPROVAL" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AGENT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AGENT" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AFL_ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AFL_ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AFL_NATIONAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AFL_NATIONAL" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INSIDE_SALES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INSIDE_SALES" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PURCHASE_ORDER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PURCHASE_ORDER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EXTRACT_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EXTRACT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BOOKED_DATE]"
+                      dataType="date"
+                      name="BOOKED_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULE_PERIOD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SCHEDULE_PERIOD" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALES_CHANNEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SALES_CHANNEL" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[REQUEST_DATE]"
+                      dataType="date"
+                      name="REQUEST_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PROMISE_DATE]"
+                      dataType="date"
+                      name="PROMISE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDER_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ORDER_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PARTIAL_ALLOWED]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PARTIAL_ALLOWED" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RESERVATION_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RESERVATION_FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_TO_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_TO_CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FOB_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FOB_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FREIGHT_TERMS_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FREIGHT_TERMS_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HOLD_FLAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HOLD_FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MULTI_ORG_SHIP_SET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MULTI_ORG_SHIP_SET" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MAKE_BUY_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAKE_BUY_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SHIP_SET_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SHIP_SET_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_FREIGHT_CARRIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SO_LINE_FREIGHT_CARRIER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SCHEDULE_APPROVAL_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SCHEDULE_APPROVAL_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SO_LINE_CREATE_DATE]"
+                      dataType="date"
+                      name="SO_LINE_CREATE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QTY_IN_LBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QTY_IN_LBS" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_UOM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_UOM" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SPECIFICATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SPECIFICATION" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUOTE_NUMBER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QUOTE_NUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NEW_PRODUCT" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT_CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NEW_PRODUCT_CATEGORY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_COST_UPDATE_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACTUAL_COST_UPDATE_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRIMARY_QUANTITY]"
+                      dataType="numeric"
+                      name="PRIMARY_QUANTITY"
+                      precision="12"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRIMARY_UOM_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRIMARY_UOM_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INVOICE_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="INVOICE_SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUOTE_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QUOTE_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATA_SOURCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_SOURCE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NEW_PRODUCT_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NEW_PRODUCT_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COMMENTS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="COMMENTS" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CURR_MATERIAL_OVERHEAD_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CURR_MATERIAL_OVERHEAD_COST" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ACTUAL_MATERIAL_OVERHEAD_COST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ACTUAL_MATERIAL_OVERHEAD_COST" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Revenue Margin Extract\Is Numeric"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Is Numeric"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Revenue Margin Extract\Is Numeric.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Revenue Margin Extract\Is Numeric.Inputs[Derived Column Input].Columns[CheckNumeric]"
+                      cachedDataType="i4"
+                      cachedName="IsNumeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output].Columns[IsNumeric]"
+                      name="CheckNumeric"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output].Columns[IsNumeric]},0)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(CheckNumeric,0)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Revenue Margin Extract\Is Numeric.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Revenue Margin Extract\Is Numeric.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Revenue Margin Extract\Is Numeric.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Revenue Margin Extract.Paths[Derived Column Output]"
+              endId="Package\Revenue Margin Extract\Is Numeric.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Revenue Margin Extract\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Revenue Margin Extract.Paths[Flat File Source Output]"
+              endId="Package\Revenue Margin Extract\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Revenue Margin Extract\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Revenue Margin Extract"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Revenue Margin Extract">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Revenue Margin Extract\Flat File Source"
+          TopLeft="39,130" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Revenue Margin Extract\Derived Column"
+          TopLeft="265,203" />
+        <EdgeLayout
+          Id="Package\Revenue Margin Extract.Paths[Flat File Source Output]"
+          TopLeft="115.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226.5,31"
+              Start="0,0"
+              End="226.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="222.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222.5,15.5"
+                    Point2="226.5,15.5"
+                    Point3="226.5,19.5" />
+                  <mssgle:LineSegment
+                    End="226.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Revenue Margin Extract\Is Numeric"
+          TopLeft="528,187" />
+        <EdgeLayout
+          Id="Package\Revenue Margin Extract.Paths[Derived Column Output]"
+          TopLeft="419,224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109,-16"
+              Start="0,0"
+              End="101.5,-16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5,0"
+                    Point2="54.5,0"
+                    Point3="54.5,-4" />
+                  <mssgle:LineSegment
+                    End="54.5,-12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.5,-12"
+                    Point2="54.5,-16"
+                    Point3="58.5,-16" />
+                  <mssgle:LineSegment
+                    End="101.5,-16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -7,12 +7,12 @@
   DTS:CreatorName="NAA\eddybc"
   DTS:DTSID="{0111B067-B220-4BE3-9790-5D74889C1904}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
   DTS:LocaleID="1033"
   DTS:ObjectName="SetupIndex_Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{2DAD99A3-A3FF-43C9-9436-04AAD654A2F8}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{C95D577C-8990-4B8A-BF71-A21BB8A51810}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -810,7 +810,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1283,7 +1283,722 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{52FB7B91-30BA-4EFE-8418-E8705A10972A}"
-          SQLTask:SqlStatementSource="USE Premise&#xA;&#xA;DELETE FROM Setup.tblSetup&#xA;&#xA;DELETE FROM Setup.tblAttributes&#xA;&#xA;DELETE FROM Setup.tblSetupAttributes&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE Premise&#xA;&#xA;TRUNCATE TABLE Setup.tblSetup&#xA;&#xA;TRUNCATE TABLE Setup.tblAttributes&#xA;&#xA;TRUNCATE TABLE Setup.tblSetupAttributes&#xA;&#xA;TRUNCATE TABLE Setup.tblProcessMachines" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Process Machines"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b3cbc3e2-995d-4032-bfa0-04aea75cc2f7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Process Machines"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Process Machines\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">tblProcessMachines</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Process Machines\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SetupIndexTables]"
+                  connectionManagerRefId="Package.ConnectionManagers[SetupIndexTables]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessID]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessID]"
+                      name="ProcessID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineID]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineID]"
+                      name="MachineID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineNumber]"
+                      length="50"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineNumber]"
+                      name="MachineNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineRanking]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineRanking]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineRanking]"
+                      name="MachineRanking"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Comments]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Comments]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Comments]"
+                      name="Comments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[AddScheduleDates]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AddScheduleDates]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[AddScheduleDates]"
+                      name="AddScheduleDates"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Uptime]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Uptime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Uptime]"
+                      name="Uptime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[RightTheFirstTime]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RightTheFirstTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[RightTheFirstTime]"
+                      name="RightTheFirstTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftStartTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineShiftStartTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftStartTime]"
+                      name="MachineShiftStartTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftEndTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineShiftEndTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftEndTime]"
+                      name="MachineShiftEndTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineStartDelay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineStartDelay]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineStartDelay]"
+                      name="MachineStartDelay"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[PMDefaultTime]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PMDefaultTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[PMDefaultTime]"
+                      name="PMDefaultTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[DownTime]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DownTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[DownTime]"
+                      name="DownTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeExtension]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessTimeExtension]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeExtension]"
+                      name="ProcessTimeExtension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineCount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineCount]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineCount]"
+                      name="MachineCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeDelay]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessTimeDelay]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeDelay]"
+                      name="ProcessTimeDelay"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[IncludeInReport]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IncludeInReport]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[IncludeInReport]"
+                      name="IncludeInReport"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessID]"
+                      dataType="i4"
+                      name="ProcessID" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineID]"
+                      dataType="i4"
+                      name="MachineID" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineRanking]"
+                      dataType="i4"
+                      name="MachineRanking" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Comments]"
+                      dataType="nText"
+                      name="Comments" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AddScheduleDates]"
+                      dataType="bool"
+                      name="AddScheduleDates" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Uptime]"
+                      dataType="r8"
+                      name="Uptime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RightTheFirstTime]"
+                      dataType="r8"
+                      name="RightTheFirstTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineShiftStartTime]"
+                      dataType="dbTimeStamp"
+                      name="MachineShiftStartTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineShiftEndTime]"
+                      dataType="dbTimeStamp"
+                      name="MachineShiftEndTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineStartDelay]"
+                      dataType="r8"
+                      name="MachineStartDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PMDefaultTime]"
+                      dataType="r8"
+                      name="PMDefaultTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DownTime]"
+                      dataType="r8"
+                      name="DownTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessTimeExtension]"
+                      dataType="i4"
+                      name="ProcessTimeExtension" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MachineCount]"
+                      dataType="r8"
+                      name="MachineCount" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ProcessTimeDelay]"
+                      dataType="i4"
+                      name="ProcessTimeDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IncludeInReport]"
+                      dataType="bool"
+                      name="IncludeInReport" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessID]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessID]"
+                      name="ProcessID" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineID]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineID]"
+                      name="MachineID" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineNumber]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineNumber]"
+                      name="MachineNumber" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineRanking]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineRanking]"
+                      name="MachineRanking" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Comments]"
+                      dataType="nText"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Comments]"
+                      name="Comments" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AddScheduleDates]"
+                      dataType="bool"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AddScheduleDates]"
+                      name="AddScheduleDates" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Uptime]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Uptime]"
+                      name="Uptime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RightTheFirstTime]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RightTheFirstTime]"
+                      name="RightTheFirstTime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineShiftStartTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineShiftStartTime]"
+                      name="MachineShiftStartTime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineShiftEndTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineShiftEndTime]"
+                      name="MachineShiftEndTime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineStartDelay]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineStartDelay]"
+                      name="MachineStartDelay" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PMDefaultTime]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PMDefaultTime]"
+                      name="PMDefaultTime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DownTime]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DownTime]"
+                      name="DownTime" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessTimeExtension]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessTimeExtension]"
+                      name="ProcessTimeExtension" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineCount]"
+                      dataType="r8"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MachineCount]"
+                      name="MachineCount" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessTimeDelay]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ProcessTimeDelay]"
+                      name="ProcessTimeDelay" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IncludeInReport]"
+                      dataType="bool"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IncludeInReport]"
+                      name="IncludeInReport" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Process Machines\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Setup].[tblProcessMachines]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Process Machines\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NAASPB-PRD04\SQL2014.Premise]"
+                  connectionManagerRefId="Package.ConnectionManagers[NAASPB-PRD04\SQL2014.Premise]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProcessID]"
+                      cachedDataType="i4"
+                      cachedName="ProcessID"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessID]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessID]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineID]"
+                      cachedDataType="i4"
+                      cachedName="MachineID"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineID]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineID]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Comments]"
+                      cachedDataType="nText"
+                      cachedName="Comments"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Comments]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MachineNumber"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineNumber]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineNumber]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineRanking]"
+                      cachedDataType="i4"
+                      cachedName="MachineRanking"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineRanking]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineRanking]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AddScheduleDates]"
+                      cachedDataType="bool"
+                      cachedName="AddScheduleDates"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddScheduleDates]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[AddScheduleDates]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Uptime]"
+                      cachedDataType="r8"
+                      cachedName="Uptime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uptime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[Uptime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RightTheFirstTime]"
+                      cachedDataType="r8"
+                      cachedName="RightTheFirstTime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RightTheFirstTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[RightTheFirstTime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineShiftStartTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="MachineShiftStartTime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineShiftStartTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftStartTime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineShiftEndTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="MachineShiftEndTime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineShiftEndTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineShiftEndTime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineStartDelay]"
+                      cachedDataType="r8"
+                      cachedName="MachineStartDelay"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineStartDelay]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineStartDelay]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PMDefaultTime]"
+                      cachedDataType="r8"
+                      cachedName="PMDefaultTime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PMDefaultTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[PMDefaultTime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DownTime]"
+                      cachedDataType="r8"
+                      cachedName="DownTime"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DownTime]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[DownTime]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProcessTimeExtension]"
+                      cachedDataType="i4"
+                      cachedName="ProcessTimeExtension"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessTimeExtension]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeExtension]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MachineCount]"
+                      cachedDataType="r8"
+                      cachedName="MachineCount"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineCount]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[MachineCount]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProcessTimeDelay]"
+                      cachedDataType="i4"
+                      cachedName="ProcessTimeDelay"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessTimeDelay]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[ProcessTimeDelay]" />
+                    <inputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IncludeInReport]"
+                      cachedDataType="bool"
+                      cachedName="IncludeInReport"
+                      externalMetadataColumnId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IncludeInReport]"
+                      lineageId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output].Columns[IncludeInReport]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessID]"
+                      dataType="i4"
+                      name="ProcessID" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineID]"
+                      dataType="i4"
+                      name="MachineID" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
+                      dataType="nText"
+                      name="Comments" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="MachineNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineRanking]"
+                      dataType="i4"
+                      name="MachineRanking" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddScheduleDates]"
+                      dataType="bool"
+                      name="AddScheduleDates" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uptime]"
+                      dataType="r8"
+                      name="Uptime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RightTheFirstTime]"
+                      dataType="r8"
+                      name="RightTheFirstTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineShiftStartTime]"
+                      dataType="dbTimeStamp"
+                      name="MachineShiftStartTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineShiftEndTime]"
+                      dataType="dbTimeStamp"
+                      name="MachineShiftEndTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineStartDelay]"
+                      dataType="r8"
+                      name="MachineStartDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PMDefaultTime]"
+                      dataType="r8"
+                      name="PMDefaultTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DownTime]"
+                      dataType="r8"
+                      name="DownTime" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessTimeExtension]"
+                      dataType="i4"
+                      name="ProcessTimeExtension" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MachineCount]"
+                      dataType="r8"
+                      name="MachineCount" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessTimeDelay]"
+                      dataType="i4"
+                      name="ProcessTimeDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IncludeInReport]"
+                      dataType="bool"
+                      name="IncludeInReport" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Process Machines\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Process Machines\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Process Machines\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Process Machines.Paths[ADO NET Source Output]"
+              endId="Package\Process Machines\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Process Machines\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1802,7 +2517,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2475,7 +3190,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2731,6 +3446,14 @@
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Setup Attributes"
       DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{348EB163-8A6F-4272-9289-E0AE73D4947E}"
+      DTS:From="Package\Setup Attributes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Process Machines" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2743,7 +3466,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="127,42"
           Id="Package\Attributes"
@@ -2830,6 +3553,32 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Process Machines"
+          TopLeft="299,444" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="378.5,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2910,7 +3659,7 @@
     design-time-name="Package\Setup Attributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="173,42"
           Id="Package\Setup Attributes\OLE DB Destination"
@@ -2950,9 +3699,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2983,7 +3730,7 @@
     design-time-name="Package\Setup Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="173,42"
           Id="Package\Setup Table\OLE DB Destination"
@@ -3011,7 +3758,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3027,6 +3776,77 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Setup Table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Process Machines">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Process Machines\ADO NET Source"
+          TopLeft="400,117" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Process Machines\OLE DB Destination"
+          TopLeft="383,239" />
+        <EdgeLayout
+          Id="Package\Process Machines.Paths[ADO NET Source Output]"
+          TopLeft="480,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,80"
+              Start="0,0"
+              End="-10.5,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="-4,40" />
+                  <mssgle:LineSegment
+                    End="-6.5,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,40"
+                    Point2="-10.5,40"
+                    Point3="-10.5,44" />
+                  <mssgle:LineSegment
+                    End="-10.5,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process Machines\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process Machines\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
